@@ -50,7 +50,15 @@
 
   services.xserver.enable = true;
 
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+	enable = true;
+	extraPackages = with pkgs; [
+		kdePackages.qtsvg
+		kdePackages.qtvirtualkeyboard
+		kdePackages.qtmultimedia
+	];
+	theme = "sddm-astronaut-theme";
+  };
   services.desktopManager.plasma6.enable = true;
 
   services.xserver.xkb = {
@@ -75,10 +83,6 @@
     isNormalUser = true;
     description = "Daci";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
     shell = pkgs.zsh;
   };
   
@@ -99,6 +103,13 @@
 	git
 	vulkan-tools
 	solaar
+	(sddm-astronaut.override {
+	  embeddedTheme = "jake_the_dog";
+	})
+	tree
+    	kdePackages.xdg-desktop-portal-kde
+	obs-studio
+	bibata-cursors
   #  wget
   ];
 
@@ -115,6 +126,7 @@
   programs.hyprland.enable = true;
 
   programs.zsh.enable = true;
+  xdg.portal.enable = true;
 
   system.stateVersion = "25.05";
 
