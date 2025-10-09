@@ -5,6 +5,8 @@
   # manage.
   imports = [
     ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/gaming.nix
+    ../../modules/home-manager/zsh.nix
   ];
 
   home.username = "daci";
@@ -21,7 +23,7 @@
   home.sessionVariables = {
     EDITOR = "vim";
   };
-
+ 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

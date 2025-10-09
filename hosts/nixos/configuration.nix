@@ -5,7 +5,9 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      ../../modules/nixos/gaming.nix
     ];
+
   # Nix Settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -77,6 +79,7 @@
       kdePackages.kate
     #  thunderbird
     ];
+    shell = pkgs.zsh;
   };
   
   home-manager = {
@@ -90,10 +93,11 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-	vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+	vim
 	efibootmgr
 	os-prober
 	git
+	vulkan-tools
 	solaar
   #  wget
   ];
@@ -109,6 +113,8 @@
   };
 
   programs.hyprland.enable = true;
+
+  programs.zsh.enable = true;
 
   system.stateVersion = "25.05";
 
