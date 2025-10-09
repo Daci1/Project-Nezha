@@ -6,7 +6,7 @@
   imports = [
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/gaming.nix
-    ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/zsh/zsh.nix
   ];
 
   home.username = "daci";
@@ -14,7 +14,8 @@
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  home.packages = [
+  home.packages = with pkgs; [
+	fastfetch
   ];
 
   home.file = {
