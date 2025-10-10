@@ -56,12 +56,12 @@
 				"$mainMod, mouse_up, workspace, e-1"
 
 				# Waybar shortcuts
-				"$mainMod SHIFT, B, exec, killall waybar && waybar"
-				"$mainMod, B, exec, killall waybar || waybar"
+				"$mainMod SHIFT, B, exec, pkill waybar && waybar"
+				"$mainMod, B, exec, pkill waybar || waybar"
 
 				"ALT, Tab, workspace, previous"
-				"$mainMod SHIFT, S, exec, grim -g \"$(slurp)\" | wl-copy && notify-send \"Screenshot saved to clipboard\"" #screenshot
-				"$mainMod SHIFT, R, exec, killall solaar; solaar -w=hide"
+				"$mainMod SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy && notify-send \"Screenshot saved to clipboard\"" #screenshot
+				"$mainMod SHIFT, R, exec, pkill solaar; solaar -w=hide"
 				"$mainMod, L, exec, wlogout"
 				"$mainMod, F, fullscreen"
 
@@ -79,8 +79,8 @@
 			bindle = [
 				# Media/Audio Keybinds
 				", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
-				", XF86AudioLowerVolume, exec, exec  swayosd-client --output-volume lower"
-				",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+				", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
+				", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
 				", XF86AudioPlay, exec, playerctl play-pause"
 				", XF86AudioNext, exec, playerctl next"
 				", XF86AudioPrev, exec, playerctl previous"

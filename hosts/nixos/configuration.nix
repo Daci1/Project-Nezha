@@ -75,6 +75,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
 
@@ -110,6 +111,8 @@
     	kdePackages.xdg-desktop-portal-kde
 	obs-studio
 	bibata-cursors
+	pavucontrol
+	pulseaudio
   #  wget
   ];
 
@@ -126,7 +129,16 @@
   programs.hyprland.enable = true;
 
   programs.zsh.enable = true;
-  xdg.portal.enable = true;
+  xdg.portal = {
+	enable = true;
+	extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+  
+  fonts = {
+    packages = with pkgs; [
+	nerd-fonts.jetbrains-mono
+    ];
+  };
 
   system.stateVersion = "25.05";
 
