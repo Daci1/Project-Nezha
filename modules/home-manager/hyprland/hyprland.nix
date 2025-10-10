@@ -10,20 +10,28 @@
 	  ./workspaces.nix
 
 	  ./hypridle.nix
+	  ./hyprlock.nix
+	  ./wlogout.nix
 	  ../waybar.nix
 	];
 	home.packages = with pkgs; [
-		waybar	
-		rofi	
 		kitty	
-		wlogout	
+
 		grim
 		slurp
 		wl-clipboard
+
 		swww
 		swaynotificationcenter
+
+		waybar	
+		rofi	
 		hypridle
+		hyprlock
+		wlogout	
+
 		xfce.thunar
+
 		libnotify
 		swayosd
 	];
