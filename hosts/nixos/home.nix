@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
 	fastfetch
 	lazydocker
+	playerctl
   ];
 
   home.file = {
