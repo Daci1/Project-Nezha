@@ -90,6 +90,9 @@
   
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
+    useUserPackages = true;
+    useGlobalPkgs = true;
+    backupFileExtension = "backup";
     users = {
 	"daci" = import ./home.nix;	
     };

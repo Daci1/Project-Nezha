@@ -133,6 +133,9 @@
 					  "4" = "";
 					  "5" = "󰡨";
 				  };
+				  "persistent-workspaces" = {
+					"*" = [ 1 2 3 ];
+				  };
 			  };
 
 			  "pulseaudio" = {
@@ -443,6 +446,14 @@ window#waybar {
     border-bottom: 3px solid transparent;
     margin-bottom: 0px;
     color: #bb9af7;
+}
+
+/* Removes unwanted on hover background color on workspaces */
+#workspaces button:hover {
+    box-shadow: none; /* Remove predefined box-shadow */
+    text-shadow: none; /* Remove predefined text-shadow */
+    background: none; /* Remove predefined background color (white) */
+    transition: none; /* Disable predefined animations */
 }
 
 #workspaces button.active {
