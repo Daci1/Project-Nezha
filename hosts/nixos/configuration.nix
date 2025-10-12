@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ../../modules/nixos/gaming.nix
-      ../../modules/nixos/development.nix
+      ../../modules/nixos/development
     ];
 
   # Nix Settings

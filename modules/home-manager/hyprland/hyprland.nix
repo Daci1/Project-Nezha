@@ -47,6 +47,7 @@
 			  "swww-daemon"
 			  "swayosd-server"
 			  "hypridle"
+			  "flatpak run com.discordapp.Discord --start-minimized"
 		  ];
 
 		  input = {
