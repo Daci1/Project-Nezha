@@ -1,0 +1,7 @@
+cava
+fastfetch
+kitty
+gtk && qt themes (maybe just gtk)
+rofi
+yazi maybe
+set default xdg stuff (browser, png etc..)

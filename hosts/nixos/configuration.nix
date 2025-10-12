@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ../../modules/nixos/gaming.nix
+      ../../modules/nixos/development.nix
     ];
 
   # Nix Settings
@@ -95,6 +96,8 @@
   };
 
   programs.firefox.enable = true;
+
+  # ALlow unfree
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [

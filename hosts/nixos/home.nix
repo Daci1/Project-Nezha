@@ -7,6 +7,7 @@
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/gaming.nix
     ../../modules/home-manager/zsh/zsh.nix
+    ../../modules/home-manager/cava.nix
   ];
 
   home.username = "daci";
