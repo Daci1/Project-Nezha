@@ -45,7 +45,6 @@
 			  "solaar --window=hide --restart-on-wake-up"
 			  "swww-daemon"
 			  "swayosd-server"
-			  "hypridle"
 			  "flatpak run com.discordapp.Discord --start-minimized"
 		  ];
 
