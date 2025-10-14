@@ -4,8 +4,7 @@
 	environment.systemPackages = with stablePkgs; [
 	  jetbrains.jdk
 	  jetbrains.goland
-	] ++ (with pkgs; [
-	  pkgs.go
-	]);
+          go
+	] ++ (with pkgs; []);
 }
 

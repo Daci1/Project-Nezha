@@ -30,7 +30,6 @@
 		hyprlock
 		wlogout	
 
-		xfce.thunar
 
 		libnotify
 		swayosd

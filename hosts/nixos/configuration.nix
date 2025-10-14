@@ -6,6 +6,8 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ../../modules/nixos/gaming.nix
+      ../../modules/nixos/file-explorer.nix
+      ../../modules/nixos/multimedia.nix
       ../../modules/nixos/development
     ];
 
@@ -119,6 +121,8 @@
 	bibata-cursors
 	pavucontrol
 	pulseaudio
+	zip
+	unzip
   #  wget
   ];
 
