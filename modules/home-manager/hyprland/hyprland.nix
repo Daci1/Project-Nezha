@@ -12,7 +12,7 @@
 	  ./hypridle.nix
 	  ./hyprlock.nix
 	  ./wlogout.nix
-	  ../waybar.nix
+	  ../waybar
 	];
 	home.packages = with pkgs; [
 		kitty	

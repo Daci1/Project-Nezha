@@ -13,7 +13,7 @@
 			  "height" = 30;
 
 			  "modules-left" = [
-				  "hyprland/workspaces"
+				  "group/currentOsWithWorkspaces"
 			  	  "custom/media"
 			  ];
 
@@ -24,7 +24,6 @@
 			  "modules-right" = [
 				"tray"
 			  	"custom/weather"
-			  	#"custom/wl-gammarelay-temperature"
 			  	"memory"
 				"cpu"
 				"pulseaudio"
@@ -36,6 +35,11 @@
 			  "group/connections" = {
 				  "orientation" = "inherit";
 				  "modules" = [ "bluetooth" "network" ];
+			  };
+			  
+ 			  "group/currentOsWithWorkspaces" = {
+				"orientation" = "inherit";
+				"modules" = [ "custom/nixos" "custom/separator" "hyprland/workspaces" ];
 			  };
 
 			  # Modules
@@ -125,7 +129,7 @@
 				  "disable-scroll" = true;
 				  "disable-markup" = false;
 				  "all-outputs" = true;
-				  "format" = "  {icon}  ";
+				  "format" = " {icon}  ";
 				  "format-icons" = {
 					  "1" = "";
 					  "2" = "";
@@ -180,6 +184,17 @@
 				  "exec" = "~/hypr-dots/waybar/scripts/weather.sh Timisoara"; 
 				  "return-type" = "json";
 				  "interval" = 600;
+			  };
+			
+			  "custom/nixos" = {
+				"format" = " ";
+				"tooltip" = false;
+			  };
+
+			  "custom/separator" = {
+				"format" = "|";
+				"interval" = "once";
+				"tooltip" = false;
 			  };
 
 			  "tray" = {
@@ -306,9 +321,9 @@ window#waybar {
 #idle_inhibitor,
 #window,
 #custom-power,
-#workspaces,
 #custom-media,
 #custom-PBPbattery,
+#currentOsWithWorkspaces,
 #custom-wl-gammarelay-temperature {
     padding:0.25rem 0.75rem;
     margin: 1px 6px;
@@ -469,7 +484,8 @@ window#waybar {
 
 #custom-power {
     font-size:18px;
-    padding-right: 1rem;
+    padding-right: 17px;
+    padding-left: 13px;
 }
 
 #custom-launcher {
@@ -490,6 +506,17 @@ window#waybar {
 #connections #bluetooth {
 	padding-right: 10px;
 	color: @default;
+}
+
+#custom-nixos {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+#custom-separator {
+  font-size: 22px;
+  border-right: 2px;
+  color: gray;
 }
 
 tooltip {
