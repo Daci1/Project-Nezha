@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 
 {
+  imports = [ ./fastfetch.nix ];
   home.packages = with pkgs; [
     oh-my-posh
   ];

@@ -13,9 +13,9 @@
 	  ./hyprlock.nix
 	  ./wlogout.nix
 	  ../waybar
+	  ../kitty.nix
 	];
 	home.packages = with pkgs; [
-		kitty	
 
 		grim
 		slurp

@@ -1,0 +1,86 @@
+{ pkgs, lib, ... }:
+
+{
+  programs.fastfetch = {
+    enable = true;
+
+    settings = {
+      logo = {
+        source = ./pusheen.png;
+        type = "kitty";
+        height = 15;
+      };
+
+      display = {
+        separator = " ";
+      };
+
+      modules = [
+        "break"
+        "break"
+
+        {
+          type = "title";
+          keyWidth = 10;
+        }
+
+        "break"
+
+        {
+          type = "os";
+          key = " ";
+          keyColor = "33";
+        }
+
+        {
+          type = "kernel";
+          key = " ";
+          keyColor = "33";
+        }
+
+        {
+          type = "packages";
+          format = "{} (pacman)";
+          key = " ";
+          keyColor = "33";
+        }
+
+        {
+          type = "shell";
+          key = " ";
+          keyColor = "33";
+        }
+
+        {
+          type = "terminal";
+          key = " ";
+          keyColor = "33";
+        }
+
+        {
+          type = "wm";
+          key = " ";
+          keyColor = "33";
+        }
+
+        {
+          type = "uptime";
+          key = " ";
+          keyColor = "33";
+        }
+
+        {
+          type = "media";
+          key = "󰝚 ";
+          keyColor = "33";
+        }
+
+        "break"
+        "colors"
+        "break"
+        "break"
+      ];
+    };
+  };
+}
+
