@@ -4,9 +4,10 @@
 	wayland.windowManager.hyprland = {
 		settings = {
 
-			windowrulev2 = [
+			windowrule = [
 				"suppressevent maximize, class:.*" # You'll probably like this.
 				# window rules - move to workspace
+				"workspace 1, class:^(steam_app_.*)"
 				"workspace 2, class:^([Ff]irefox|org.mozilla.firefox|[Ff]irefox-esr)$"
 				"workspace 3, class:^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$"
 				"workspace 4 silent, class:^([Ss]team)$"
@@ -44,10 +45,9 @@
 				"pin, class:^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$, initialTitle:^(Discord\\ Popout)$"
 				"move 2206 78, class:^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$, initialTitle:^(Discord\\ Popout)$"
 				"size 525 297, class:^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$, initialTitle:^(Discord\\ Popout)$"
-			];
 
-			windowrule = [
-				"workspace 1, class:^(steam_app_.*)"
+				#render unfocused
+				"renderunfocused, workspace:1"
 			];
 		};
 	};
