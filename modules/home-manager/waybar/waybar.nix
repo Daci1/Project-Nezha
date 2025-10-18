@@ -39,7 +39,7 @@
 			  
  			  "group/currentOsWithWorkspaces" = {
 				"orientation" = "inherit";
-				"modules" = [ "custom/nixos" "custom/separator" "hyprland/workspaces" ];
+				"modules" = [ "custom/os-logo" "custom/separator" "hyprland/workspaces" ];
 			  };
 
 			  # Modules
@@ -186,9 +186,10 @@
 				  "interval" = 600;
 			  };
 			
-			  "custom/nixos" = {
+			  "custom/os-logo" = {
 				"format" = " ";
 				"tooltip" = false;
+				"on-click" = "hyprsysteminfo";
 			  };
 
 			  "custom/separator" = {
@@ -508,7 +509,7 @@ window#waybar {
 	color: @default;
 }
 
-#custom-nixos {
+#custom-os-logo {
     font-size: 20px;
     padding-left: 10px;
 }

@@ -66,7 +66,7 @@
 				"$mainMod, F, fullscreen"
 
 				#Wallpaper selector
-				#"$mainMod SHIFT, W, exec, ~/hypr-dots/hypr/hyprland/scripts/wallpaperSelect.sh" #TODO: fix this
+				"$mainMod SHIFT, W, exec, waypaper"
 			];
 
 			bindm = [

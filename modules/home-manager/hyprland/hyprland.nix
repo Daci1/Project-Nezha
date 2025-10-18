@@ -11,6 +11,7 @@
 
 	  ./hypridle.nix
 	  ./hyprlock.nix
+	  ./hyprsunset.nix
 	  ./wlogout.nix
 	  ../waybar
 	  ../kitty.nix
@@ -28,7 +29,10 @@
 		rofi	
 		hypridle
 		hyprlock
+		hyprsysteminfo
 		wlogout	
+
+		waypaper
 
 
 		libnotify

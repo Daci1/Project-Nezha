@@ -1,7 +1,5 @@
-cava
-fastfetch
-kitty
 gtk && qt themes (maybe just gtk)
-rofi
+rofi theme
 yazi maybe
 set default xdg stuff (browser, png etc..)
+waypaper - styling via home manager custom files

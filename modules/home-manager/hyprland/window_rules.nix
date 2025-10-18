@@ -18,6 +18,7 @@
 				"float, class:^(pavucontrol|org.pulseaudio.pavucontrol)$"
 				"float, class:^(CUSTOM_CLASS_NETWORK_TUI)$"
 				"float, class:^(steam)$, title:negative:^Steam$"
+				"float, class:^(waypaper)$"
 
 				"float, title:^(gsr\\ ui)$"
 				"float, initialTitle:^(gsr\\ ui)$"
@@ -25,13 +26,16 @@
 
 				# window rules - center
 				"center, class:^(pavucontrol|org.pulseaudio.pavucontrol)"
+				"center, class:^(waypaper)"
 
 				# window rules - size
 				"size 60% 80%, class:^(pavucontrol|org.pulseaudio.pavucontrol)$"
 				"size 50% 80%, class:^(CUSTOM_CLASS_NETWORK_TUI)$"
+				"size 35% 60%, class:^(waypaper)$"
 
 				# window rules - opacity
 				"opacity 0.9 0.8, class:^(kitty)$"
+				"opacity 0.8, class:^(waypaper)$"
 
 				# picture-in-picture rules
 				## firefox
