@@ -1,9 +1,9 @@
 { pkgs, lib, ... }:
 
 {
-  imports = [ ./fastfetch.nix ];
-  home.packages = with pkgs; [
-    oh-my-posh
+  imports = [ 
+    ./fastfetch.nix 
+    ../oh-my-posh
   ];
 
   programs.zsh = {
@@ -20,14 +20,8 @@
 	initContent = ''
 	  bindkey -e
 	  zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-	  eval "$(${pkgs.oh-my-posh}/bin/oh-my-posh init zsh --config ${./custom.omp.json})"
 	  bindkey "$terminfo[kcuu1]" history-substring-search-up
 	  bindkey "$terminfo[kcud1]" history-substring-search-down
 	'';
   };
-
-  #programs.oh-my-posh = {
-	#enable = true;
-	#enableZshIntegration = true;
-  #};	settings = builtins.fromJSON (builtins.readFile ./custom.omp.json);
 }

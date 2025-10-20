@@ -1,59 +1,58 @@
 { pkgs, ... }:
 
 {
-	programs.kitty= {
-		enable = true;
-		package = pkgs.kitty;
-		settings = {
-			# Base colors
-			background = "#000000";
-			foreground = "#f8f8f2";
+  programs.kitty = {
+    enable = true;
+    package = pkgs.kitty;
+    settings = {
+      # Base colors
+      background = "#0D1116";
+      foreground = "#ffffff";
 
-			# Cursor
-			cursor = "#bbbbbb";
+      # Cursor
+      cursor = "#ffffff";
 
-			# Selection highlight
-			selection_background = "#44475a";
-			selection_foreground = "#1e1f28";
+      # Selection highlight
+      selection_background = "#e9b3fd";
+      selection_foreground = "#ffffff";
 
-			# Black
-			color0 = "#000000";
-			color8 = "#545454";
+      # Black
+      color0 = "#0D1116";
+      color8 = "#e58f2a";
 
-			# Red
-			color1 = "#ef2d56";
-			color9 = "#ef2d56";
+      # Red
+      color1 = "#ef2d56";
+      color9 = "#ef2d56";
 
-			# Green
-			color2 = "#2ecc71";
-			color10 = "#2ecc71";
+      # Green
+      color2 = "#37f499";
+      color10 = "#37f499";
 
-			# Yellow
-			color3 = "#f0fa8b";
-			color11 = "#f0fa8b";
+      # Yellow
+      color3 = "#9ad900";
+      color11 = "#9ad900";
 
-			# Blue
-			color4 = "#7d5fff";
-			color12 = "#7d5fff";
+      # Blue
+      color4 = "#987afb";
+      color12 = "#987afb";
 
-			# Magenta
-			color5 = "#ff78c5";
-			color13 = "#ff78c5";
+      # Magenta
+      color5 = "#fca6ff";
+      color13 = "#fca6ff";
 
-			# Cyan
-			color6 = "#7d5fff";
-			color14 = "#7d5fff";
+      # Cyan
+      color6 = "#04d1f9";
+      color14 = "#04d1f9";
 
-			# White
-			color7 = "#bbbbbb";
-			color15 = "#ffffff";
+      # White
+      color7 = "#ffffff";
+      color15 = "#ffffff";
 
-			#Other config
-			confirm_os_window_close = 0;
-		};
-	};
+      # URL color
+      url_color = "#04d1f9";
+
+      # Other config
+      confirm_os_window_close = 0;
+    };
+  };
 }
-
-
-
-

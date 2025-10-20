@@ -3,3 +3,8 @@ rofi theme
 yazi maybe
 set default xdg stuff (browser, png etc..)
 waypaper - styling via home manager custom files
+
+Good docs:
+https://discourse.nixos.org/t/guide-to-installing-qt-theme/35523
+
+Good for styling: stylix nix
