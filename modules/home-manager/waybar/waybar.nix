@@ -61,23 +61,18 @@
 				  "format" = "{capacity}% {icon} ";
 				  "format-charging" = "{capacity}% 󰂄";
 				  "format-plugged" = "{capacity}% ";
-				  #"format-good" = "", # An empty format will hide the module
-				  #"format-full" = "",
 				  "format-icons" = ["" "" "" "" ""];
 			  };
 
 
 			  "clock" = {
 				  "interval"= 10;
-				  # "format-alt": " {:%e %b %Y}", # Icon: calendar-alt
-				  "format" = " {:%e %b %Y %H:%M} ";
+				  "format" = "  {:%e %b %Y %H:%M} ";
 				  "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
 				  "actions" =  {
 					  "on-click-right" = "mode";
 					  "on-scroll-up" = [ "tz_up" "shift_up" ];
 					  "on-scroll-down" = [ "tz_down" "shift_down" ];
-					  #"on-scroll-up" = "shift_up";
-					  #"on-scroll-down" = "shift_down";
 				  };
 			  };
 
@@ -297,13 +292,9 @@
 
 /* The whole bar */
 window#waybar {
-    /* color: #dfdfdf; */
-    /* background-color: rgba(0,0,0,0.8); */
-    /* background-color: rgba(8,0,37,0.85); */
     background-color: rgba(0,0,0,0);
     font-family: JetBrainsMono Nerd Font;
     font-size: 15px;
-    /* border-radius: 22px; */
 }
 
 /* Every modules */
@@ -329,7 +320,7 @@ window#waybar {
     padding:0.25rem 0.75rem;
     margin: 1px 6px;
     background-color: rgba(0,0,0,0.8);
-    border-radius: 20px;
+    border-radius: 10px;
     color: @default;
 }
 
@@ -338,7 +329,6 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 
 #clock {
-    /* color: #ff4499; */
     color: #73daca;
 }
 
@@ -402,8 +392,6 @@ window#waybar {
 }
 
 #mode {
-    /* background: @highlight; */
-    /* background: #dfdfdf; */
     border-bottom: 3px transparent;
     color:#ff4499;
     margin-left: 5px;
@@ -419,24 +407,16 @@ window#waybar {
     border-left: 0px;
     border-right: 0px;
     margin-right: 0;
-    border-radius: 20px 0 0 20px;
+    border-radius: 10px 0 0 10px;
 }
 
-/* #pulseaudio.muted { */
-/*     color: #ff4499; */
-/* } */
-/**/
 #pulseaudio.microphone {
     border-left: 0px;
     border-right: 0px;
     margin-left: 0;
     padding-left: 0;
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 10px 10px 0;
 }
-
-/* #pulseaudio.microphone.muted { */
-/*     color: #ff4499; */
-/* } */
 
 
 #temperature.critical {
@@ -454,8 +434,7 @@ window#waybar {
 
 #workspaces {
     font-size:20px;
-    background-color: rgba(0,0,0,0.8);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 #workspaces button {
