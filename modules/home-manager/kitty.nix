@@ -41,8 +41,8 @@
       color13 = "#fca6ff";
 
       # Cyan
-      color6 = "#04d1f9";
-      color14 = "#04d1f9";
+      color6 = "#66aced";
+      color14 = "#66aced";
 
       # White
       color7 = "#ffffff";

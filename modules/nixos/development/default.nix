@@ -2,7 +2,7 @@
 
 {
 	imports = [
-	  ./go.nix
+	  ./jetbrains.nix
 	  ./docker.nix
 	];
 

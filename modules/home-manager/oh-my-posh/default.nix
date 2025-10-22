@@ -38,6 +38,13 @@
                 fetch_status = true;
               };
             }
+            {
+              background = "transparent";
+              foreground = "cyan";
+              style = "plain";
+              template = "{{ if ne .Type \"unknown\"}} - via  Nix{{end}}";
+              type = "nix-shell";
+            }
           ];
         }
 
@@ -64,12 +71,6 @@
 		shell = "bash";
 		command = ./display_terraform.sh;
               };
-            }
-            {
-              background = "transparent";
-              style = "plain";
-              template = "<white>{{ if ne .Segment.Index 0 }} | {{end}}<white/><blue>{{ .Icon }}  </>";
-              type = "os";
             }
           ];
         }
