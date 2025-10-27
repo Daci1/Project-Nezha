@@ -2,8 +2,9 @@
 
 {
 	imports = [
-	  ./jetbrains.nix
+	  ./database.nix
 	  ./docker.nix
+	  ./jetbrains.nix
 	];
 
 	programs.direnv = {
