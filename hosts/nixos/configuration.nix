@@ -5,7 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      ../../modules/nixos/gaming.nix
+      ../../modules/nixos/gaming
       ../../modules/nixos/file-explorer.nix
       ../../modules/nixos/multimedia.nix
       ../../modules/nixos/development
@@ -13,6 +13,9 @@
 
   # Nix Settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Linux Kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Bootloader.
   boot.loader = {
@@ -151,5 +154,10 @@
   };
 
   system.stateVersion = "25.05";
+
+  networking.firewall = {
+	  enable = true;
+	  allowedTCPPorts = [ 25565 ];
+  };
 
 }
