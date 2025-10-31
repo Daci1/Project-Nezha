@@ -329,7 +329,7 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 
 #clock {
-    color: #73daca;
+    color: #37f499;
 }
 
 #custom-weather {
@@ -361,7 +361,7 @@ window#waybar {
 }
 
 #cpu {
-    color: #f7768e;
+    color: #ef2d56;
 }
 
 #cpu.warning {
@@ -376,7 +376,7 @@ window#waybar {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    color: #f7768e;
+    color: #ef2d56;
 }
 
 #memory.warning {
@@ -403,7 +403,7 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: #bb9af7;
+    color: #987afb;
     border-left: 0px;
     border-right: 0px;
     margin-right: 0;
@@ -440,7 +440,7 @@ window#waybar {
 #workspaces button {
     border-bottom: 3px solid transparent;
     margin-bottom: 0px;
-    color: #bb9af7;
+    color: #987afb;
 }
 
 /* Removes unwanted on hover background color on workspaces */
@@ -452,7 +452,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    border-bottom: 1px solid  #bb9af7;
+    border-bottom: 1px solid #987afb;
     margin-bottom: 1px;
     padding-left:0;
 }
