@@ -5,10 +5,11 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      ../../modules/nixos/gaming
-      ../../modules/nixos/file-explorer.nix
-      ../../modules/nixos/multimedia.nix
+      ../../modules/nixos/bluetooth.nix
       ../../modules/nixos/development
+      ../../modules/nixos/file-explorer.nix
+      ../../modules/nixos/gaming
+      ../../modules/nixos/multimedia.nix
     ];
 
   # Nix Settings

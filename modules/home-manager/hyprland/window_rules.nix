@@ -19,6 +19,8 @@
 				"float, class:^(CUSTOM_CLASS_NETWORK_TUI)$"
 				"float, class:^(steam)$, title:negative:^Steam$"
 				"float, class:^(waypaper)$"
+				"float, class:^(com.network.manager)$"
+				"float, class:^(.blueman-manager-wrapped)$"
 
 				"float, title:^(gsr\\ ui)$"
 				"float, initialTitle:^(gsr\\ ui)$"
@@ -32,6 +34,8 @@
 				"size 60% 80%, class:^(pavucontrol|org.pulseaudio.pavucontrol)$"
 				"size 50% 80%, class:^(CUSTOM_CLASS_NETWORK_TUI)$"
 				"size 35% 60%, class:^(waypaper)$"
+				"size 35% 60%, class:^(com.network.manager)$"
+				"size 35% 60%, class:^(.blueman-manager-wrapped)$"
 
 				# window rules - opacity
 				"opacity 0.9 0.8, class:^(kitty)$"

@@ -2,8 +2,13 @@
 
 let 
 	weatherScript = import ./weather-script.nix { inherit pkgs; };
+	toggleBluetoothScript = import ./toggleBluetooth-script.nix { inherit pkgs; };
 in
 {
+	home.packages = with pkgs; [
+	  nmgui
+	];
+
 	programs.waybar = {
 	  enable = true;
 	  package = pkgs.waybar;
@@ -103,7 +108,7 @@ in
 				  "format-ethernet" = " "; # Icon: ethernet
 				  "format-disconnected" = "⚠  Disconnected";
 				  "tooltip-format" = "{ifname}: {ipaddr}";
-				  "on-click-right" = "kitty --class CUSTOM_CLASS_NETWORK_TUI -e nmtui";
+				  "on-click-right" = "${pkgs.nmgui}/bin/nmgui";
 			  };
 
 			  "network#vpn" = {
@@ -164,7 +169,7 @@ in
 
 			  "bluetooth" = {
 				  "format" = " {status} |";
-				  "on-click" = "~/hypr-dots/waybar/scripts/toggleBluetooth.sh";
+				  "on-click" = "${toggleBluetoothScript}/bin/toggleBluetooth";
 				  "on-click-right" = "blueman-manager";
 			  };
 
