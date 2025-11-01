@@ -1,5 +1,8 @@
 { pkgs, lib, ... }:
 
+let 
+	weatherScript = import ./weather-script.nix { inherit pkgs; };
+in
 {
 	programs.waybar = {
 	  enable = true;
@@ -176,7 +179,7 @@
 			  # to use the weather module replace <your_location> with your city or town
 			  # note: do not use spaces: new york would be newyork
 			  "custom/weather" = {
-				  "exec" = "~/hypr-dots/waybar/scripts/weather.sh Timisoara"; 
+				  "exec" = "${weatherScript}/bin/weather Timisoara"; 
 				  "return-type" = "json";
 				  "interval" = 600;
 			  };
@@ -333,7 +336,7 @@ window#waybar {
 }
 
 #custom-weather {
-    color: #ff4499;
+    color: #FF4499;
 }
 
 #battery {
