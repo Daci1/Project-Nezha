@@ -33,18 +33,9 @@
   programs.home-manager.enable = true;
   qt = {
 	enable = true;
-	platformTheme = "qtct";
+	platformTheme.name = "qtct";
 	style.name = "kvantum";
   };
-
-  #xdg.configFile = {
-	  #"Kvantum/kvantum.kvconfig".text = ''
-		  #[General]
-		  #theme=GraphiteNordDark
-			  #'';
-
-	  #"Kvantum/GraphiteNord".source = "${stablePkgs.graphite-kde-theme}/share/Kvantum/GraphiteNord";
-  #};
 
   gtk = {
 	  enable = true;
