@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, stablePkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -25,18 +25,55 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
+    NIXOS_OZONE_WL = "1";
+    #GTK_THEME = "TokyoNight-Dark";
   };
  
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  qt = {
+	enable = true;
+	platformTheme = "qtct";
+	style.name = "kvantum";
+  };
+
+  #xdg.configFile = {
+	  #"Kvantum/kvantum.kvconfig".text = ''
+		  #[General]
+		  #theme=GraphiteNordDark
+			  #'';
+
+	  #"Kvantum/GraphiteNord".source = "${stablePkgs.graphite-kde-theme}/share/Kvantum/GraphiteNord";
+  #};
+
   gtk = {
 	  enable = true;
+	  theme = {
+		name = "Dracula";
+		package = pkgs.dracula-theme;
+	  };
+	  iconTheme = {
+		name = "Dracula";
+		package = pkgs.dracula-icon-theme;
+		
+	  };
 	  cursorTheme = {
 		  name = "Bibata-Modern-Classic";
 		  package = pkgs.bibata-cursors;
 		  size = 24;
 	  };
+	  gtk3 = {
+		  extraConfig.gtk-application-prefer-dark-theme = true;
+	  };
   };
+
+  dconf.settings = {
+	  "org/gnome/desktop/interface" = {
+		  gtk-theme = "Dracula";
+		  color-scheme = "prefer-dark";
+	  };
+  };
+
   home.pointerCursor = {
          gtk.enable = true;
          package = pkgs.bibata-cursors;
@@ -44,9 +81,6 @@
          size = 24;
   };
   
-  home.sessionVariables = {
-	NIXOS_OZONE_WL = "1";
-  };
   home.file.".local/share/flatpak/overrides/global".text = ''
 	  [Context]
 	  filesystems=/nix/store:ro;

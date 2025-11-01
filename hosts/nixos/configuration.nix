@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, stablePkgs, ... }:
 
 {
   imports =
@@ -94,7 +94,7 @@
   };
   
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs stablePkgs; };
     useUserPackages = true;
     useGlobalPkgs = true;
     backupFileExtension = "backup";
