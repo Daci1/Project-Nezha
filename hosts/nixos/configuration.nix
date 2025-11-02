@@ -127,6 +127,7 @@
 	pulseaudio
 	zip
 	unzip
+	qbittorrent-enhanced
   #  wget
   ];
 
@@ -158,7 +159,7 @@
 
   networking.firewall = {
 	  enable = true;
-	  allowedTCPPorts = [ 25565 ];
+	  allowedTCPPorts = [ 80 25565 ];
   };
 
 }
