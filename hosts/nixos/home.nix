@@ -4,10 +4,11 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   imports = [
-    ../../modules/home-manager/hyprland/hyprland.nix
-    ../../modules/home-manager/gaming.nix
-    ../../modules/home-manager/zsh/zsh.nix
     ../../modules/home-manager/cava.nix
+    ../../modules/home-manager/gaming.nix
+    ../../modules/home-manager/hyprland/hyprland.nix
+    ../../modules/home-manager/nvim
+    ../../modules/home-manager/zsh/zsh.nix
   ];
 
   home.username = "daci";
