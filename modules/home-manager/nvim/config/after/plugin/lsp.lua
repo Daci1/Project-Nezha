@@ -23,4 +23,19 @@ vim.lsp.config('gopls', {
   capabilities = capabilities,
 })
 
-vim.lsp.enable('gopls')
+-- Json LSP
+vim.lsp.config('jsonls', {
+  cmd = { "vscode-json-languageserver", "--stdio" },
+  filetypes = { "json", "jsonc" },
+  root_dir = vim.fs.root(0, { ".git" }),
+  on_attach = on_attach,
+  settings = {
+    json = {
+      validate = { enable = true },
+      schemas = {},
+    },
+  },
+  capabilities = capabilities,
+})
+
+vim.lsp.enable({ 'gopls', 'jsonls' })

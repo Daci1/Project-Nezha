@@ -42,7 +42,9 @@ in
 	home.packages = with pkgs; [
     ripgrep
 		fzf
+
     gopls
+    vscode-json-languageserver
 	];
 
 	xdg.configFile.nvim = {
