@@ -7,6 +7,7 @@
       inputs.home-manager.nixosModules.default
       ../../modules/nixos/bluetooth.nix
       ../../modules/nixos/development
+      ../../modules/nixos/dns
       ../../modules/nixos/file-explorer.nix
       ../../modules/nixos/gaming
       ../../modules/nixos/multimedia.nix
@@ -110,7 +111,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-	vim
 	efibootmgr
 	os-prober
 	git
@@ -159,7 +159,7 @@
 
   networking.firewall = {
 	  enable = true;
-	  allowedTCPPorts = [ 80 25565 ];
+	  allowedTCPPorts = [ 25565 ];
   };
 
 }
