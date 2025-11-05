@@ -12,7 +12,8 @@
 				"workspace 3, class:^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$"
 				"workspace 4 silent, class:^([Ss]team)$"
 				"workspace 5, class:^([Dd]ocker\\ Desktop)$"
-				"workspace 6, initialTitle:^(gsr\\ ui)$"
+				"workspace 6, class:^(org.prismlauncher.PrismLauncher)$"
+				"workspace 7, initialTitle:^(gsr\\ ui)$"
 
 				# window rules - float
 				"float, class:^(pavucontrol|org.pulseaudio.pavucontrol)$"

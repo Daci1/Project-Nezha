@@ -34,9 +34,9 @@
 
 		waypaper
 
-
 		libnotify
 		swayosd
+    hyprpolkitagent
 	];
 
 	wayland.windowManager.hyprland = {
