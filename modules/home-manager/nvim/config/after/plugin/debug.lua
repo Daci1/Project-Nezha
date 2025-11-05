@@ -2,6 +2,14 @@ local dap = require("dap")
 local dapui = require("dapui")
 local dapView = require("dap-view")
 
+dapView.setup({
+  winbar = {
+    controls = {
+      enabled = true,
+    },
+  },
+})
+
 dapui.setup({
   expand_lines = true,
   floating = { border = "rounded" },

@@ -23,9 +23,15 @@ in
       vim-fugitive
       comment-nvim
 
+      nui-nvim
+      noice-nvim
+      nvim-notify
+      lualine-nvim
+
       nvim-lspconfig
       nvim-cmp
       cmp-nvim-lsp
+      cmp-cmdline
 
       nvim-dap
       nvim-dap-ui
