@@ -12,3 +12,9 @@ cmp.setup({
     { name = 'nvim_lsp' },
   }),
 })
+
+cmp.setup.filetype({ "dap-repl", "dapui_watches" }, {
+  sources = {
+    { name = "dap" },
+  }, 
+}) 

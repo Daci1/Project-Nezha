@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>fv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>fc", vim.cmd.Ex, { desc = "Open netrw in the location of the current file" })
 
 -- Copy/Paste from the clipboard
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { noremap = true, silent = true })

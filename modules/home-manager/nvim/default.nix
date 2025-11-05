@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ stablePkgs, pkgs, ... }:
 
 let
   jb-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -21,16 +21,26 @@ in
       jb-nvim
       undotree
       vim-fugitive
+      comment-nvim
 
       nvim-lspconfig
       nvim-cmp
       cmp-nvim-lsp
+
+      nvim-dap
+      nvim-dap-ui
+      nvim-dap-view
+      cmp-dap
+      nvim-dap-go
+      nvim-dap-vscode-js
 
       # For other grammars: https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/parsing/tree-sitter/update.nix
       (nvim-treesitter.withPlugins (plugins: with plugins; [
         go
         nix
         lua
+        javascript typescript html css
+        json yaml toml bash
       ]))
 		];
 
@@ -45,6 +55,14 @@ in
 
     gopls
     vscode-json-languageserver
+    stablePkgs.go
+    stablePkgs.delve
+
+    stablePkgs.nodejs_24
+    stablePkgs.typescript
+    stablePkgs.typescript-language-server
+    stablePkgs.angular-language-server
+    vscode-js-debug
 	];
 
 	xdg.configFile.nvim = {

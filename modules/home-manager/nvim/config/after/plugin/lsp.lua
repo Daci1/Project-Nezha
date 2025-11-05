@@ -38,4 +38,59 @@ vim.lsp.config('jsonls', {
   capabilities = capabilities,
 })
 
-vim.lsp.enable({ 'gopls', 'jsonls' })
+-- TS/JS LSP
+vim.lsp.config('ts-server', {
+  cmd = { "typescript-language-server", "--stdio" },
+  filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+root_dir = vim.fs.root(0, { "tsconfig.json", "package.json", ".git" }),
+  on_attach = on_attach,
+  settings = {},
+  capabilities = capabilities,
+})
+
+-- Angular LSP
+vim.lsp.config('angularls', {
+  cmd = (function()
+    -- Try to detect node_modules path for project-specific TypeScript/Angular
+    local project_root = vim.fs.root(0, { "angular.json", "project.json", "tsconfig.json", "package.json", ".git" })
+    local node_modules = project_root and (project_root .. "/node_modules") or vim.fn.getcwd()
+
+    return {
+      "ngserver",
+      "--stdio",
+      "--tsProbeLocations", node_modules,
+      "--ngProbeLocations", node_modules,
+    }
+  end)(),
+
+  filetypes = {
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "html",
+  },
+
+  root_dir = vim.fs.root(0, {
+    "angular.json",
+    "project.json",
+    "tsconfig.json",
+    "package.json",
+    ".git",
+  }),
+
+  on_attach = on_attach,
+  capabilities = capabilities,
+
+  settings = {
+    angular = {
+      suggest = {
+        includeAutomaticOptionalChainCompletions = true,
+      },
+      completion = {
+        useSnippetCompletions = true,
+      },
+    },
+  },
+})
+
+vim.lsp.enable({ 'gopls', 'jsonls', 'ts-server', 'angularls' })
