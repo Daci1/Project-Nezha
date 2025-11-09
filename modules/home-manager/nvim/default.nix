@@ -23,7 +23,12 @@ in
       vim-fugitive
       comment-nvim
 
+      copilot-lua
       nui-nvim
+      plenary-nvim
+      render-markdown-nvim
+      avante-nvim
+
       noice-nvim
       nvim-notify
       lualine-nvim
@@ -40,13 +45,16 @@ in
       nvim-dap-go
       nvim-dap-vscode-js
 
+      nvim-test
+
       # For other grammars: https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/parsing/tree-sitter/update.nix
       (nvim-treesitter.withPlugins (plugins: with plugins; [
         go
         nix
         lua
-        javascript typescript html css
-        json yaml toml bash
+        javascript typescript html css markdown
+        json yaml toml
+        bash
       ]))
 		];
 
