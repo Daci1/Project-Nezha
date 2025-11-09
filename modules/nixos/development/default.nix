@@ -5,6 +5,7 @@
 	  ./database.nix
 	  ./docker.nix
 	  ./jetbrains.nix
+	  ./tui.nix
 	];
 
 	programs.direnv = {

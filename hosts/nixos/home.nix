@@ -17,7 +17,6 @@
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-	lazydocker
 	playerctl
   ];
 
