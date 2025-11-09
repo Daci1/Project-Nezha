@@ -27,7 +27,15 @@ cmp.setup.cmdline('/', {
 })
 
 cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
+  mapping = cmp.mapping.preset.cmdline({
+    ['<S-CR>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.confirm({ select = false })
+      else
+        fallback() -- Fall back to normal <S-CR> behavior if cmp is not visible
+      end
+    end, { 'i', 'c' }), -- Ensure this works in both insert and cmdline modes
+  }),
   sources = cmp.config.sources({
     { name = 'path' }
   }, {

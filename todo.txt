@@ -1,3 +1,4 @@
 rofi theme
 yazi maybe
 set default xdg stuff (browser, png etc..)
+neovim plugins: lazygit, gitsigns, directory tree
