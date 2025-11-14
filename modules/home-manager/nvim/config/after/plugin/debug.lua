@@ -64,21 +64,50 @@ local js_based_languages = {
   "typescriptreact",
 }
 
-require("dap-vscode-js").setup({
-  adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' }, -- which adapters to register in nvim-dap
-  debugger_path = "/etc/profiles/per-user/daci/bin/js-debug",
-  debugger_cmd = { "js-debug" },
-})
-
 for _,language in ipairs(js_based_languages) do
-  dap.configurations[language] = {
-    {
-      type = "pwa-node",
-      request = "launch",
-      name = "Launch file",
-      program = "${file}",
-      cwd = "${workspaceFolder}",
-      runtimeExecutable = "node",
-    },
-  }
+  dap.configurations[language] = dap.configurations[language] or {}
+
+  -- Launch configuration
+  table.insert(dap.configurations[language], {
+    type = "pwa-node",
+    request = "launch",
+    name = "Launch file",
+    console = "integratedTerminal",
+    program = "${file}",
+    cwd = "${workspaceFolder}",
+    sourceMaps = true,
+  })
+
+  -- Attach configuration with dynamic process picker
+  table.insert(dap.configurations[language], {
+    type = "pwa-node",
+    request = "attach",
+    name = "Attach to process",
+    processId = require("dap.utils").pick_process, -- pick running Node/TS process
+    cwd = "${workspaceFolder}",
+    sourceMaps = true,
+  })
+
+  table.insert(dap.configurations[language], {
+    type = "pwa-node",
+    request = "launch",
+    name = "Launch via npm",
+    runtimeExecutable = "npm",
+    runtimeArgs = { "run", "dev" }, 
+    cwd = "${workspaceFolder}",
+    sourceMaps = true,
+  })
 end
+
+dap.adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    command = "node", -- Node binary
+    args = {
+      os.getenv("NIX_NVIM_JS_DEBUG_PATH"),
+      "${port}",
+    },
+  },
+}

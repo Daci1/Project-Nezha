@@ -62,8 +62,12 @@ in
 
 		extraConfig = ''
 			:luafile ~/.config/nvim/lua/init.lua
-			'';
+		'';
 	};
+
+  home.sessionVariables = {
+    NIX_NVIM_JS_DEBUG_PATH = "${pkgs.vscode-js-debug}/lib/node_modules/js-debug/dist/src/dapDebugServer.js";
+  };
 
 	home.packages = with pkgs; [
     ripgrep
