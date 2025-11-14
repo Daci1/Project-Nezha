@@ -11,6 +11,7 @@
       ../../modules/nixos/file-explorer.nix
       ../../modules/nixos/gaming
       ../../modules/nixos/multimedia.nix
+      ../../modules/nixos/sensors.nix
     ];
 
   # Nix Settings
