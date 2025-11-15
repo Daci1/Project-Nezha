@@ -39,11 +39,11 @@ in
       nvim-cmp
       cmp-nvim-lsp
       cmp-cmdline
+      cmp-dap
 
       nvim-dap
       nvim-dap-ui
       nvim-dap-view
-      cmp-dap
       nvim-dap-go
       nvim-dap-vscode-js
 

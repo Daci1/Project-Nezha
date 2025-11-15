@@ -2,3 +2,4 @@ rofi theme
 yazi maybe
 set default xdg stuff (browser, png etc..)
 neovim plugins: directory tree
+grub theme: grubphemous is a nice place for inspiration
