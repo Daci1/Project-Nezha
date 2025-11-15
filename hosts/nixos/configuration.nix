@@ -112,24 +112,24 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-	efibootmgr
-	os-prober
-	git
-	vulkan-tools
-	solaar
-	(sddm-astronaut.override {
-	  embeddedTheme = "jake_the_dog";
-	})
-	tree
-    	kdePackages.xdg-desktop-portal-kde
-	obs-studio
-	bibata-cursors
-	pavucontrol
-	pulseaudio
-	zip
-	unzip
-	qbittorrent-enhanced
-  #  wget
+    efibootmgr
+    os-prober
+    git
+    vulkan-tools
+    solaar
+    (sddm-astronaut.override {
+     embeddedTheme = "jake_the_dog";
+     })
+    tree
+    kdePackages.xdg-desktop-portal-kde
+    obs-studio
+    bibata-cursors
+    pavucontrol
+    pulseaudio
+    zip
+    unzip
+    qbittorrent-enhanced
+    upscayl
   ];
 
   # List services that you want to enable:
