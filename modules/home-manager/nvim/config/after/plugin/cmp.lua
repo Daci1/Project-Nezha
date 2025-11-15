@@ -49,27 +49,3 @@ cmp.setup.cmdline(':', {
   })
 })
 
--- Send clear command to dap REPL if buffer is dap
-local function smart_ctrl_l()
-  local cmp_dap = require("cmp_dap")
-
-  -- Only handle DAP buffers in insert mode
-  if cmp_dap.is_dap_buffer() and vim.api.nvim_get_mode().mode == "i" then
-    vim.api.nvim_feedkeys(
-      vim.api.nvim_replace_termcodes(".clear<CR>", true, false, true),
-      "i",
-      false
-    )
-    return
-  end
-
-  -- In insert mode, fallback to literal <C-l> in non-DAP buffers
-  vim.api.nvim_feedkeys(
-    vim.api.nvim_replace_termcodes("<C-l>", true, false, true),
-    "i",
-    true
-  )
-end
-
--- Insert-mode mapping only
-vim.keymap.set("i", "<C-l>", smart_ctrl_l, { silent = true })
