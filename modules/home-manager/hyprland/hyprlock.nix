@@ -3,6 +3,7 @@
 let
   assetsDir = ../../../assets;
   defaultWallpaperPath = "${assetsDir}/wallpapers/blasphemous.jpg";
+  lockScreenProfilePicturePath = "${assetsDir}/lockscreen/nezha.png";
 in
 {
   programs.hyprlock = {
@@ -10,10 +11,16 @@ in
     package = pkgs.hyprlock;
     settings = {
       background = {
-#monitor =
+        #monitor =
         path = defaultWallpaperPath;
+        blur_passes = 2;
+        contrast = 0.8916;
+        brightness = 0.8172;
+        vibrancy = 0.1696;
+        vibrancy_darkness = 0.0;
       };
 
+      # Password input field
       input-field = {
         #monitor =
         size = "200, 50";
@@ -73,17 +80,16 @@ in
       }
       ];
 
+      # Profile photo
       image = {
-        #monitor =
-        path = "${assetsDir}/lockscreen/timmy.jpg";
-        size = 280; # lesser side if not 1:1 ratio
-        rounding = -1; # negative values mean circle
-        border_size = 4;
-        border_color = "rgb(221, 221, 221)";
-        rotate = 0; # degrees, counter-clockwise
-        reload_time = -1; # seconds between reloading, 0 to reload with sigusr2
-           # reload_cmd =  # command to get new path. if empty, old path will be used. don't run "follow" commands like tail -f
-        position = "0, 200";
+        path = lockScreenProfilePicturePath;
+        border_color = "rgba(216, 222, 233, 0.70)";
+        border_size = 3;
+        size = 220;
+        rounding = -1;
+        rotate = 0;
+        reload_time = -1;
+        position = "0, 15";
         halign = "center";
         valign = "center";
       };
