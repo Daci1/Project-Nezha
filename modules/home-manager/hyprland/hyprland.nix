@@ -32,11 +32,14 @@
 		hyprsysteminfo
 		wlogout	
 
-		waypaper
-
 		libnotify
 		swayosd
     hyprpolkitagent
+
+    # Others
+		waypaper
+    hyprpicker
+
 	];
 
 	wayland.windowManager.hyprland = {
