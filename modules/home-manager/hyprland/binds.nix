@@ -60,7 +60,8 @@
 				"$mainMod, B, exec, pkill waybar || waybar"
 
 				"ALT, Tab, workspace, previous"
-				"$mainMod SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy && notify-send \"Screenshot saved to clipboard\"" #screenshot
+				"$mainMod SHIFT, S, exec, sel=\"$(slurp)\" ||  exit; grim -g \"$sel\" - | wl-copy && notify-send \"Screenshot saved to clipboard\"" #screenshot with selection
+				"$mainMod, S, exec, grim - | wl-copy && notify-send \"Screenshot saved to clipboard\"" #screenshot of whole screen
 				"$mainMod SHIFT, R, exec, pkill solaar; solaar -w=hide"
 				"$mainMod, L, exec, wlogout"
 				"$mainMod, F, fullscreen"
