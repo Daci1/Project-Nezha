@@ -12,6 +12,7 @@
       ../../modules/nixos/gaming
       ../../modules/nixos/multimedia.nix
       ../../modules/nixos/sensors.nix
+      ../../modules/nixos/xdg-portal-defaults.nix
     ];
 
   # Nix Settings
@@ -130,6 +131,8 @@
     unzip
     qbittorrent-enhanced
     upscayl
+    gimp
+    qimgv
   ];
 
   # List services that you want to enable:
