@@ -15,3 +15,6 @@ vim.opt.laststatus = 3
 -- Make undo persistent
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("cache") .. "/undo"
+
+-- Make search case insensitive
+vim.opt.ignorecase = true
