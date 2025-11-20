@@ -3,6 +3,9 @@
 let 
 	weatherScript = import ./weather-script.nix { inherit pkgs; };
 	toggleBluetoothScript = import ./toggleBluetooth-script.nix { inherit pkgs; };
+  greenColor = "#37f499";
+  redColor = "#ef2d56";
+  orangeColor = "#e58f2a";
 in
 {
 	home.packages = with pkgs; [
@@ -338,7 +341,7 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 
 #clock {
-    color: #37f499;
+    color: ${greenColor};
 }
 
 #custom-weather {
@@ -370,22 +373,22 @@ window#waybar {
 }
 
 #cpu {
-    color: #ef2d56;
+    color: ${orangeColor};
 }
 
 #cpu.warning {
-    color: orange;
+    color: ${orangeColor};
 }
 
 #cpu.critical {
-    color: red;
+    color: ${redColor};
 }
 
 #memory {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    color: #ef2d56;
+    color: ${orangeColor};
 }
 
 #memory.warning {
