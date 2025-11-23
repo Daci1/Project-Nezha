@@ -93,4 +93,9 @@ vim.lsp.config('angularls', {
   },
 })
 
-vim.lsp.enable({ 'gopls', 'jsonls', 'ts-server', 'angularls' })
+vim.lsp.enable({ 
+  'gopls',
+  'jsonls',
+  'ts-server',
+  'angularls',
+})
