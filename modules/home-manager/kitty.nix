@@ -55,4 +55,17 @@
       confirm_os_window_close = 0;
     };
   };
+  home.file."quick-access-terminal.conf" = {
+    target = ".config/kitty/quick-access-terminal.conf";
+    text = ''
+      lines 50
+      edge top
+      background_opacity 1
+      margin_top 50
+      margin_right 100
+      margin_left 100
+      kitty_override background_image=${../../assets/wallpapers/blasphemous.jpg}
+      kitty_override background_tint=0.99
+      '';
+  };
 }
