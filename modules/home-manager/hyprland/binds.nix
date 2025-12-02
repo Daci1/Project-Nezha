@@ -1,5 +1,8 @@
 { pkgs, lib, ... }:
 
+let
+	obsScripts= import ./obs-scripts.nix { inherit pkgs; };
+in
 {
 	wayland.windowManager.hyprland = {
 		settings = {
@@ -69,6 +72,10 @@
 
 				#Wallpaper selector
 				"$mainMod SHIFT, W, exec, waypaper"
+
+        # OBS Replay Buffer
+        "$mainMod SHIFT, Q, exec, ${obsScripts}/bin/obs-replay-toggle"
+        "$mainMod SHIFT, E, exec, ${obsScripts}/bin/obs-replay-save"
 			];
 
 			bindm = [

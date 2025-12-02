@@ -11,6 +11,7 @@
       ../../modules/nixos/file-explorer.nix
       ../../modules/nixos/gaming
       ../../modules/nixos/multimedia.nix
+      ../../modules/nixos/obs.nix
       ../../modules/nixos/sensors.nix
       ../../modules/nixos/xdg-portal-defaults.nix
     ];
@@ -123,7 +124,6 @@
      })
     tree
     kdePackages.xdg-desktop-portal-kde
-    obs-studio
     bibata-cursors
     pavucontrol
     pulseaudio
