@@ -1,6 +1,3 @@
-
-{ ... }:
-
 {
   xdg.mime = {
     enable = true;
@@ -10,6 +7,8 @@
       "image/gif" = [ "qimgv.desktop" ];
       "image/bmp" = [ "qimgv.desktop" ];
       "image/webp" = [ "qimgv.desktop" ];
+      "application/pdf" = [ "firefox.desktop" ];
     };
   };
 }
+
