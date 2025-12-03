@@ -62,13 +62,14 @@
   services.xserver.enable = true;
 
   services.displayManager.sddm = {
-	enable = true;
-	extraPackages = with pkgs; [
-		kdePackages.qtsvg
-		kdePackages.qtvirtualkeyboard
-		kdePackages.qtmultimedia
-	];
-	theme = "sddm-astronaut-theme";
+    enable = true;
+    wayland.enable = true;
+    extraPackages = with pkgs; [
+      kdePackages.qtsvg
+      kdePackages.qtvirtualkeyboard
+      kdePackages.qtmultimedia
+    ];
+    theme = "sddm-astronaut-theme";
   };
   services.desktopManager.plasma6.enable = true;
 
@@ -104,7 +105,7 @@
     useGlobalPkgs = true;
     backupFileExtension = "backup";
     users = {
-	"daci" = import ./home.nix;	
+      "daci" = import ./home.nix;
     };
   };
 
@@ -123,7 +124,6 @@
      embeddedTheme = "jake_the_dog";
      })
     tree
-    kdePackages.xdg-desktop-portal-kde
     bibata-cursors
     pavucontrol
     pulseaudio
@@ -149,13 +149,13 @@
 
   programs.zsh.enable = true;
   xdg.portal = {
-	enable = true;
-	extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
   
   fonts = {
     packages = with pkgs; [
-	nerd-fonts.jetbrains-mono
+      nerd-fonts.jetbrains-mono
     ];
   };
 
