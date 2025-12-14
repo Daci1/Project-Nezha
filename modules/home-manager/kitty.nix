@@ -66,6 +66,6 @@
       margin_left 100
       kitty_override background_image=${../../assets/wallpapers/blasphemous.jpg}
       kitty_override background_tint=0.99
-      '';
+    '';
   };
 }

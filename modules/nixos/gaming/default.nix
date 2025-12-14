@@ -1,9 +1,8 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
-	imports = [ 
-		./steam.nix 
-		./minecraft.nix 
-	];
+  imports = [
+    ./steam.nix
+    ./minecraft.nix
+  ];
 }
-

@@ -1,10 +1,8 @@
 { pkgs, ... }:
 
 {
-	environment.systemPackages = with pkgs; [
-	  lazydocker
+  environment.systemPackages = with pkgs; [
+    lazydocker
     lazygit
-	];
+  ];
 }
-
-

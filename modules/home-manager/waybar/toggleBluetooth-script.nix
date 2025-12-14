@@ -12,4 +12,3 @@ pkgs.writeShellScriptBin "toggleBluetooth" ''
       ${pkgs.bluez}/bin/bluetoothctl power on
   fi
 ''
-

@@ -1,9 +1,8 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
-	environment.systemPackages = with pkgs; [
-	  vlc
-	  libvlc
-	];
+  environment.systemPackages = with pkgs; [
+    vlc
+    libvlc
+  ];
 }
-

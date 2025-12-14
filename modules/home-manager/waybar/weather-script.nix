@@ -13,4 +13,3 @@ pkgs.writeShellScriptBin "weather" ''
 
   echo '{"text": "'$TEMP'", "tooltip": "'$ICON $TOOLTIP $LOC'", "class": '$CLASS' }'
 ''
-

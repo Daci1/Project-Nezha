@@ -1,9 +1,16 @@
-{ pkgs, inputs, stablePkgs, ...}:
+{
+  pkgs,
+  inputs,
+  stablePkgs,
+  ...
+}:
 
 {
-	environment.systemPackages = with stablePkgs; [
-	  jetbrains.jdk
-	  jetbrains.goland
-	] ++ (with pkgs; []);
+  environment.systemPackages =
+    with stablePkgs;
+    [
+      jetbrains.jdk
+      jetbrains.goland
+    ]
+    ++ (with pkgs; [ ]);
 }
-

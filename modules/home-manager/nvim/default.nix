@@ -12,12 +12,12 @@ let
   };
 in
 {
-	programs.neovim = {
-		enable = true;
-		withNodeJs = true;
-		vimAlias = true;
-		plugins = with pkgs.vimPlugins; [
-			telescope-nvim
+  programs.neovim = {
+    enable = true;
+    withNodeJs = true;
+    vimAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      telescope-nvim
       jb-nvim
       undotree
       vim-fugitive
@@ -50,28 +50,36 @@ in
       nvim-test
 
       # For other grammars: https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/parsing/tree-sitter/update.nix
-      (nvim-treesitter.withPlugins (plugins: with plugins; [
-        go
-        nix
-        lua
-        javascript typescript html css markdown
-        json yaml toml
-        bash
-      ]))
-		];
+      (nvim-treesitter.withPlugins (
+        plugins: with plugins; [
+          go
+          nix
+          lua
+          javascript
+          typescript
+          html
+          css
+          markdown
+          json
+          yaml
+          toml
+          bash
+        ]
+      ))
+    ];
 
-		extraConfig = ''
-			:luafile ~/.config/nvim/lua/init.lua
-		'';
-	};
+    extraConfig = ''
+      			:luafile ~/.config/nvim/lua/init.lua
+      		'';
+  };
 
   home.sessionVariables = {
     NIX_NVIM_JS_DEBUG_PATH = "${pkgs.vscode-js-debug}/lib/node_modules/js-debug/dist/src/dapDebugServer.js";
   };
 
-	home.packages = with pkgs; [
+  home.packages = with pkgs; [
     ripgrep
-		fzf
+    fzf
 
     gopls
     vscode-json-languageserver
@@ -86,12 +94,11 @@ in
 
     # formatters and linters
     nixfmt
-	];
+  ];
 
-	xdg.configFile.nvim = {
-		source = ./config;
-		recursive = true;
-	};
+  xdg.configFile.nvim = {
+    source = ./config;
+    recursive = true;
+  };
 
 }
-

@@ -1,9 +1,9 @@
 { ... }:
 
 {
-	services.duckdns = {
-		enable = true;
-		domains = [ "daci-bmc" ];
-		tokenFile = ./token;
-	};
+  services.duckdns = {
+    enable = true;
+    domains = [ "daci-bmc" ];
+    tokenFile = ./token;
+  };
 }

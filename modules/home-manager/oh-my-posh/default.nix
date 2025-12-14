@@ -58,9 +58,9 @@
               template = "<green>  {{ .Output }}</green>";
               type = "command";
               properties = {
-		shell = "bash";
-		command = ./display_node.sh;
-	      };
+                shell = "bash";
+                command = ./display_node.sh;
+              };
             }
             {
               foreground = "#ffffff";
@@ -68,8 +68,8 @@
               template = "<white> {{ if ne .Segment.Index 0 }} | {{end}}</white><cyan> {{.Output}}</cyan>";
               type = "command";
               properties = {
-		shell = "bash";
-		command = ./display_terraform.sh;
+                shell = "bash";
+                command = ./display_terraform.sh;
               };
             }
           ];
@@ -117,7 +117,10 @@
           foreground = "#e0af68";
           style = "plain";
           template = "{{if .Profile}} {{.Profile}}{{if .Region}}@{{.Region}}{{end}}{{end}}";
-          tips = [ "aws" "terraform" ];
+          tips = [
+            "aws"
+            "terraform"
+          ];
           type = "aws";
           properties = {
             display_default = false;
@@ -133,4 +136,3 @@
     };
   };
 }
-

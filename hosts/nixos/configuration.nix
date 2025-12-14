@@ -1,38 +1,47 @@
-{ config, pkgs, inputs, stablePkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  stablePkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ../../modules/nixos/bluetooth.nix
-      ../../modules/nixos/development
-      ../../modules/nixos/dns
-      ../../modules/nixos/file-explorer.nix
-      ../../modules/nixos/gaming
-      ../../modules/nixos/multimedia.nix
-      ../../modules/nixos/obs.nix
-      ../../modules/nixos/sensors.nix
-      ../../modules/nixos/xdg-portal-defaults.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ../../modules/nixos/bluetooth.nix
+    ../../modules/nixos/development
+    ../../modules/nixos/dns
+    ../../modules/nixos/file-explorer.nix
+    ../../modules/nixos/gaming
+    ../../modules/nixos/multimedia.nix
+    ../../modules/nixos/obs.nix
+    ../../modules/nixos/sensors.nix
+    ../../modules/nixos/xdg-portal-defaults.nix
+  ];
 
   # Nix Settings
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Bootloader.
   boot.loader = {
-	  efi.canTouchEfiVariables = true;
-	  timeout = 10;
-	  grub = {
-		  enable = true;
-		  devices = [ "nodev" ];
-		  efiSupport = true;
-		  useOSProber = true;
-		  default = "saved";
-	  };
+    efi.canTouchEfiVariables = true;
+    timeout = 10;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = true;
+      default = "saved";
+    };
   };
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -91,15 +100,17 @@
     jack.enable = true;
   };
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.daci = {
     isNormalUser = true;
     description = "Daci";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
   };
-  
+
   home-manager = {
     extraSpecialArgs = { inherit inputs stablePkgs; };
     useUserPackages = true;
@@ -122,8 +133,8 @@
     vulkan-tools
     solaar
     (sddm-astronaut.override {
-     embeddedTheme = "jake_the_dog";
-     })
+      embeddedTheme = "jake_the_dog";
+    })
     tree
     bibata-cursors
     pavucontrol
@@ -142,7 +153,7 @@
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.flatpak ];
     script = ''
-	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+      	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     '';
   };
 
@@ -153,7 +164,7 @@
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
-  
+
   fonts = {
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
@@ -163,8 +174,11 @@
   system.stateVersion = "25.05";
 
   networking.firewall = {
-	  enable = true;
-	  allowedTCPPorts = [ 7777 25565 ];
+    enable = true;
+    allowedTCPPorts = [
+      7777
+      25565
+    ];
   };
 
 }
