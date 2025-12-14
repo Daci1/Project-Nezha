@@ -83,6 +83,9 @@ in
     stablePkgs.typescript-language-server
     stablePkgs.angular-language-server
     vscode-js-debug
+
+    # formatters and linters
+    nixfmt
 	];
 
 	xdg.configFile.nvim = {
