@@ -74,6 +74,9 @@ in
         # OBS Replay Buffer
         "$mainMod SHIFT, Q, exec, ${obsScripts}/bin/obs-replay-toggle"
         "$mainMod SHIFT, E, exec, ${obsScripts}/bin/obs-replay-save"
+
+        # Hyprpicker
+        "$mainMod SHIFT, P, exec, hyprpicker | xargs -r wl-copy"
       ];
 
       bindm = [
