@@ -16,6 +16,7 @@
     ../../modules/nixos/dns
     ../../modules/nixos/file-explorer.nix
     ../../modules/nixos/gaming
+    ../../modules/nixos/greetd.nix
     ../../modules/nixos/multimedia.nix
     ../../modules/nixos/obs.nix
     ../../modules/nixos/sensors.nix
@@ -70,18 +71,6 @@
 
   services.xserver.enable = true;
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    extraPackages = with pkgs; [
-      kdePackages.qtsvg
-      kdePackages.qtvirtualkeyboard
-      kdePackages.qtmultimedia
-    ];
-    theme = "sddm-astronaut-theme";
-  };
-  services.desktopManager.plasma6.enable = true;
-
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -132,9 +121,6 @@
     git
     vulkan-tools
     solaar
-    (sddm-astronaut.override {
-      embeddedTheme = "jake_the_dog";
-    })
     tree
     bibata-cursors
     pavucontrol

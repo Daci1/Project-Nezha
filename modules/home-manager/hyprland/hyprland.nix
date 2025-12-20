@@ -47,6 +47,7 @@
     portalPackage = null;
     settings = {
       "exec-once" = [
+        "hyprlock"
         "waybar"
         "swaync"
         "solaar --window=hide --restart-on-wake-up"
