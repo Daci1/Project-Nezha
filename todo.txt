@@ -1,5 +1,5 @@
 rofi theme
 yazi maybe
-set default xdg stuff (browser, png etc..)
 neovim plugins: directory tree
 grub theme: grubphemous is a nice place for inspiration
+find an alternative to kwallet or try to fix it without needing to install whole plasma
