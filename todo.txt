@@ -3,3 +3,4 @@ yazi maybe
 neovim plugins: directory tree
 grub theme: grubphemous is a nice place for inspiration
 find an alternative to kwallet or try to fix it without needing to install whole plasma
+lact - undervolt gpu
