@@ -5,58 +5,159 @@
     settings = {
 
       windowrule = [
-        "suppressevent maximize, class:.*" # You'll probably like this.
-        # window rules - move to workspace
-        "workspace 1, class:^(steam_app_.*)"
-        "workspace 2, class:^([Ff]irefox|org.mozilla.firefox|[Ff]irefox-esr)$"
-        "workspace 3, class:^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$"
-        "workspace 4 silent, class:^([Ss]team)$"
-        "workspace 5, class:^([Dd]ocker\\ Desktop)$"
-        "workspace 6, class:^(org.prismlauncher.PrismLauncher)$"
-        "workspace 7, initialTitle:^(gsr\\ ui)$"
+      {
+        name = "Default Rule";
+        suppress_event = "maximize";
+        match = {
+          class = ".*";
+        };
+      }
 
-        # window rules - float
-        "float, class:^(pavucontrol|org.pulseaudio.pavucontrol)$"
-        "float, class:^(CUSTOM_CLASS_NETWORK_TUI)$"
-        "float, class:^(steam)$, title:negative:^Steam$"
-        "float, class:^(waypaper)$"
-        "float, class:^(com.network.manager)$"
-        "float, class:^(.blueman-manager-wrapped)$"
+      {
+        name = "Steam Games Workspace";
+        workspace = 1;
+        match = {
+          class = "^(steam_app_.*)";
+        };
+      }
 
-        "float, title:^(gsr\\ ui)$"
-        "float, initialTitle:^(gsr\\ ui)$"
-        "norounding, title:^(gsr\\ ui)$"
+      {
+        name = "Firefox Rules";
+        workspace = 2;
+        match = {
+          class = "^([Ff]irefox|org.mozilla.firefox|[Ff]irefox-esr)$";
+        };
+      }
 
-        # window rules - center
-        "center, class:^(pavucontrol|org.pulseaudio.pavucontrol)"
-        "center, class:^(waypaper)"
+      {
+        name = "Discord Rules";
+        workspace = 3;
+        match = {
+          class = "^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$";
+        };
+      }
 
-        # window rules - size
-        "size 60% 80%, class:^(pavucontrol|org.pulseaudio.pavucontrol)$"
-        "size 50% 80%, class:^(CUSTOM_CLASS_NETWORK_TUI)$"
-        "size 35% 60%, class:^(waypaper)$"
-        "size 35% 60%, class:^(com.network.manager)$"
-        "size 35% 60%, class:^(.blueman-manager-wrapped)$"
+      {
+        name = "Steam Silent Rules";
+        workspace = "4 silent";
+        match = {
+          class = "^([Ss]team)$";
+        };
+      }
 
-        # window rules - opacity
-        "opacity 0.9 0.8, class:^(kitty)$"
-        "opacity 0.8, class:^(waypaper)$"
+      {
+        name = "Docker Rules";
+        workspace = 5;
+        match = {
+          class = "^([Dd]ocker\\ Desktop)$";
+        };
+      }
 
-        # picture-in-picture rules
-        ## firefox
-        "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
-        "pin, class:^(firefox)$, title:^(Picture-in-Picture)$"
-        "move 2231 78, class:^(firefox)$, title:^(Picture-in-Picture)$"
-        "size 500 280, class:^(firefox)$, title:^(Picture-in-Picture)$"
+      {
+        name = "Minecraft Launcher Rules";
+        workspace = 6;
+        match = {
+          class = "^(org.prismlauncher.PrismLauncher)$";
+        };
+      }
 
-        ## discord
-        "float, class:^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$, initialTitle:^(Discord\\ Popout)$"
-        "pin, class:^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$, initialTitle:^(Discord\\ Popout)$"
-        "move 2206 78, class:^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$, initialTitle:^(Discord\\ Popout)$"
-        "size 525 297, class:^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$, initialTitle:^(Discord\\ Popout)$"
+      {
+        name = "GSR UI Rules";
+        workspace = 7;
+        float = true;
+        rounding = 0;
+        match = {
+          initial_title = "^(gsr\\ ui)$";
+        };
+      }
 
-        #render unfocused
-        "renderunfocused, workspace:1"
+      {
+        name = "Sound Settings";
+        float = true;
+        center = true;
+        size = "(monitor_w*0.6) (monitor_h*0.8)";
+        match = {
+          class = "^(pavucontrol|org.pulseaudio.pavucontrol)$";
+        };
+      }
+
+      {
+        name = "Steam Rules";
+        float = true;
+        match = {
+          class = "^(steam)$";
+          title = "^(?!Steam$)";
+        };
+      }
+
+      {
+        name = "Waypaper Rules";
+        float = true;
+        size = "(monitor_w*0.35) (monitor_h*0.6)";
+        opacity = 0.8;
+        center = true;
+        match = {
+          class = "^(waypaper)$";
+        };
+      }
+
+      {
+        name = "Network Manager Rules";
+        float = true;
+        size = "(monitor_w*0.35) (monitor_h*0.6)";
+        match = {
+          class = "^(com.network.manager)$";
+        };
+      }
+
+      {
+        name = "Blueman Manager Rules";
+        float = true;
+        size = "(monitor_w*0.35) (monitor_h*0.6)";
+        match = {
+          class = "^(.blueman-manager-wrapped)$";
+        };
+      }
+
+      {
+        name = "Kitty Rules";
+        opacity = "0.9 0.8";
+        match = {
+          class = "^(kitty)$";
+        };
+      }
+
+      {
+        name = "Picture in Picture Firefox";
+        float = true;
+        pin = true;
+        move = "2206 78";
+        size = "500 280";
+        match = {
+          class = "^(firefox)$";
+          title = "^(Picture-in-Picture)$";
+        };
+      }
+
+      {
+        name = "Picture in Picture Discord";
+        float = true;
+        pin = true;
+        move = "2206 78";
+        size = "525 297";
+        match = {
+          class = "^([Dd]iscord|[Dd]iscordCanary|com.discordapp.DiscordCanary)$";
+          initial_title = "^(Discord\\ Popout)$";
+        };
+      }
+
+      {
+        name = "Always Active Workspace 1";
+        render_unfocused = true;
+        match = {
+          workspace = 1;
+        };
+      }
       ];
     };
   };
