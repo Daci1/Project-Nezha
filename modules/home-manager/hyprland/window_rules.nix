@@ -16,6 +16,7 @@
       {
         name = "Steam Games Workspace";
         workspace = 1;
+        center = true;
         match = {
           class = "^(steam_app_.*)";
         };
