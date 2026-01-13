@@ -1,9 +1,9 @@
 { stablePkgs, pkgs, ... }:
 
 let
-  jb-nvim = pkgs.vimUtils.buildVimPlugin {
+  jb-nvim = stablePkgs.vimUtils.buildVimPlugin {
     name = "vim-NeoDebug";
-    src = pkgs.fetchFromGitHub {
+    src = stablePkgs.fetchFromGitHub {
       "owner" = "nickkadutskyi";
       "repo" = "jb.nvim";
       "rev" = "a6bb6c196197462f1a2a569ffbe6b4da19e4994d";
@@ -16,7 +16,7 @@ in
     enable = true;
     withNodeJs = true;
     vimAlias = true;
-    plugins = with pkgs.vimPlugins; [
+    plugins = with stablePkgs.vimPlugins; [
       telescope-nvim
       jb-nvim
       undotree
