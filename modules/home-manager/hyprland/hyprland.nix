@@ -54,7 +54,7 @@
         "swww-daemon"
         "swayosd-server"
         "flatpak run com.discordapp.Discord --start-minimized"
-        "obs --startreplaybuffer"
+        # "obs --startreplaybuffer"
       ];
 
       input = {
