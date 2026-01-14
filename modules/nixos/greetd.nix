@@ -5,7 +5,7 @@
     enable = true;
     settings = rec {
       initial_session = {
-        command = "hyprland > /dev/null 2>&1";
+        command = "start-hyprland";
         user = "daci";
       };
       default_session = initial_session;
