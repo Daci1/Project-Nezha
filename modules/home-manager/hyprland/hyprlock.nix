@@ -4,6 +4,7 @@ let
   assetsDir = ../../../assets;
   defaultWallpaperPath = "${assetsDir}/wallpapers/blasphemous.jpg";
   lockScreenProfilePicturePath = "${assetsDir}/lockscreen/nezha.png";
+  lockScreenTurnOffMonitorPicturePath = "${assetsDir}/lockscreen/monitor_off.png";
 in
 {
   programs.hyprlock = {
@@ -80,19 +81,46 @@ in
         }
       ];
 
-      # Profile photo
-      image = {
-        path = lockScreenProfilePicturePath;
-        border_color = "rgba(216, 222, 233, 0.70)";
-        border_size = 3;
-        size = 220;
-        rounding = -1;
-        rotate = 0;
-        reload_time = -1;
-        position = "0, 15";
+      image = [
+        # Profile photo
+        {
+          path = lockScreenProfilePicturePath;
+          border_color = "rgba(216, 222, 233, 0.70)";
+          border_size = 3;
+          size = 220;
+          rounding = -1;
+          rotate = 0;
+          reload_time = -1;
+          position = "0, 15";
+          halign = "center";
+          valign = "center";
+        }
+
+        # Turn off monitor image
+        {
+          border_size = 0;
+          path = lockScreenTurnOffMonitorPicturePath;
+          halign = "center";
+          valign = "center";
+          position = "0, -600";
+          size = 100;
+          reload_time = -1;
+          rotate = 0;
+          rounding = 0;
+        }
+      ];
+
+      shape = {
+        color = "rgba(100, 114, 125, 0.8)";
+        size = "120, 120";
+        rounding = 20;
+        position = "0, -600";
         halign = "center";
         valign = "center";
+        zindex = 0;
+        onclick = "hyprctl dispatch dpms off";
       };
+
     };
   };
 }
