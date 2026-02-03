@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     protonup-ng
+    protonplus
   ];
 
   home.sessionVariables = {
