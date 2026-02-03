@@ -16,7 +16,19 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Navigate windows
-vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to upper window' })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
+
+-- Open files under cursor with gx
+vim.keymap.set("n", "gx", function()
+	local file = vim.fn.expand("<cfile>")
+
+	if vim.fn.filereadable(file) == 1 then
+		vim.cmd("edit " .. file)
+	else
+		-- fall back to default gx behavior (URLs etc)
+		vim.ui.open(file)
+	end
+end, { noremap = true, silent = true })

@@ -22,6 +22,7 @@ in
       undotree
       vim-fugitive
       comment-nvim
+
       lazygit-nvim
       gitsigns-nvim
 
@@ -48,6 +49,9 @@ in
       nvim-dap-vscode-js
 
       nvim-test
+
+      auto-save-nvim
+      conform-nvim
 
       # For other grammars: https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/parsing/tree-sitter/update.nix
       (nvim-treesitter.withPlugins (
@@ -94,6 +98,7 @@ in
 
     # formatters and linters
     nixfmt
+    stylua
   ];
 
   xdg.configFile.nvim = {

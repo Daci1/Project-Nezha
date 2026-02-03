@@ -22,9 +22,9 @@ vim.opt.ignorecase = true
 -- netrw-specific mapping override (this is because it overwrites <C-l> by default when splitting)
 local group = vim.api.nvim_create_augroup("FileTypeNetrw", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-  group = group,
-  pattern = "netrw",
-  callback = function ()
-    vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right window', buffer = true, silent = true })
-  end,
+	group = group,
+	pattern = "netrw",
+	callback = function()
+		vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window", buffer = true, silent = true })
+	end,
 })

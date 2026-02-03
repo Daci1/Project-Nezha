@@ -1,8 +1,8 @@
 function BlessMyEyes()
-  vim.cmd.colorscheme("jb")
+	vim.cmd.colorscheme("jb")
 
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 BlessMyEyes()
