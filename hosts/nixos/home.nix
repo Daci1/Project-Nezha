@@ -14,6 +14,7 @@
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/nvim
     ../../modules/home-manager/zsh/zsh.nix
+    ../../modules/home-manager/tui.nix
   ];
 
   home.username = "daci";

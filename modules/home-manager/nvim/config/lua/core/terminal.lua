@@ -1,5 +1,4 @@
 vim.keymap.set("n", "<leader>lg", function()
-	vim.cmd.tabnew()
 	vim.cmd("term lazygit")
 	vim.cmd.startinsert()
 end, { desc = "", noremap = true, silent = true })
