@@ -23,7 +23,6 @@ in
       vim-fugitive
       comment-nvim
 
-      lazygit-nvim
       gitsigns-nvim
 
       copilot-lua
