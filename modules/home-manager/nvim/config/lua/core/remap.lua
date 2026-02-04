@@ -32,3 +32,6 @@ vim.keymap.set("n", "gx", function()
 		vim.ui.open(file)
 	end
 end, { noremap = true, silent = true })
+
+-- Exit insert mode inside terminal mode with Esc
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
