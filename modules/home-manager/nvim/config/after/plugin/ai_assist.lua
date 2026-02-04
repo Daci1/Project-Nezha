@@ -5,6 +5,14 @@ require("copilot").setup({
 		debounce = 300,
 	},
 })
+
+-- Dismiss copilot suggestions when typing
+vim.api.nvim_create_autocmd("InsertCharPre", {
+	callback = function()
+		require("copilot.suggestion").dismiss()
+	end,
+})
+
 require("avante_lib").load()
 require("avante").setup({
 	provider = "copilot",
