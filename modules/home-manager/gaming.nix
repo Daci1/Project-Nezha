@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     protonup-ng
     protonplus
+    heroic
   ];
 
   home.sessionVariables = {
