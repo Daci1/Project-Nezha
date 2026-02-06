@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd("InsertCharPre", {
 require("avante_lib").load()
 require("avante").setup({
 	provider = "copilot",
-	mode = "legacy",
+	mode = "agentic",
 })
 
 -- User command to reset local state of avante
