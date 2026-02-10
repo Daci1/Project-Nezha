@@ -3,7 +3,6 @@
 {
   imports = [
     ./fastfetch.nix
-    ./tmux.nix
     ../oh-my-posh
   ];
 

@@ -10,6 +10,15 @@ let
       "hash" = "sha256-Zxt3KaIH2CzUVqTlf4rJU8iwyKUu5/YD4NwipFicvPM=";
     };
   };
+  tmux-status-nvim = stablePkgs.vimUtils.buildVimPlugin {
+    name = "tmux-status-nvim";
+    src = stablePkgs.fetchFromGitHub {
+      "owner" = "christopher-francisco";
+      "repo" = "tmux-status.nvim";
+      "rev" = "d985ba67132269dedc9a5f6479f2d40f10e06315";
+      "hash" = "sha256-o4Gj3KEnkjCVrbmSYxhDzu43RNeTunEANij1RK68r2s=";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -34,6 +43,7 @@ in
       noice-nvim
       nvim-notify
       lualine-nvim
+      tmux-status-nvim
 
       nvim-lspconfig
       nvim-cmp
@@ -51,6 +61,9 @@ in
 
       auto-save-nvim
       conform-nvim
+
+      nvim-tree-lua
+      nvim-web-devicons
 
       # For other grammars: https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/parsing/tree-sitter/update.nix
       (nvim-treesitter.withPlugins (

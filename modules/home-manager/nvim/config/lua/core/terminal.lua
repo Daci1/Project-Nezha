@@ -1,15 +1,11 @@
 vim.keymap.set("n", "<leader>lg", function()
-	vim.cmd("term lazygit")
-	vim.cmd.startinsert()
-end, { desc = "", noremap = true, silent = true })
+	local addr = vim.v.servername
 
-vim.api.nvim_create_autocmd("TermOpen", {
-	group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
-	callback = function()
-		vim.opt.number = false
-		vim.opt.relativenumber = false
-	end,
-})
+	-- Build tmux command
+	local cmd = string.format("tmux new-window -e NVIM_LISTEN_ADDRESS=%s lazygit", addr)
+
+	vim.fn.system(cmd)
+end, { desc = "Open lazygit in new tmux window with NVIM_LISTEN_ADDRESS" })
 
 vim.api.nvim_create_autocmd("TermClose", {
 	pattern = "term://*lazygit*",
@@ -38,6 +34,8 @@ vim.keymap.set({ "n", "t" }, "<C-t>", function()
 		vim.api.nvim_win_set_height(win, 15)
 		vim.g.toggle_term_win = win
 		vim.cmd.startinsert()
+		vim.opt.number = false
+		vim.opt.relativenumber = false
 		return
 	end
 
@@ -46,6 +44,8 @@ vim.keymap.set({ "n", "t" }, "<C-t>", function()
 	vim.cmd.term()
 	vim.cmd.startinsert()
 	vim.cmd.wincmd("J") -- move to bottom
+	vim.opt.number = false
+	vim.opt.relativenumber = false
 	local win = vim.api.nvim_get_current_win()
 	vim.api.nvim_win_set_height(win, 15)
 
@@ -53,7 +53,7 @@ vim.keymap.set({ "n", "t" }, "<C-t>", function()
 	vim.g.toggle_term_win = win
 	vim.g.toggle_term_buf = vim.api.nvim_win_get_buf(win)
 
-	vim.api.nvim_buf_set_keymap( --remote-send ':tabfirst<CR>'
+	vim.api.nvim_buf_set_keymap(
 		vim.g.toggle_term_buf,
 		"t",
 		"<Esc>",

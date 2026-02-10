@@ -8,7 +8,7 @@
   programs.lazygit = {
     enable = true;
     settings = {
-      os.edit = "nvim --server $NVIM_LISTEN_ADDRESS --remote {{filename}} && pkill lazygit";
+      os.edit = "nvim --server $NVIM_LISTEN_ADDRESS --remote {{filename}}; tmux kill-window";
     };
   };
 
