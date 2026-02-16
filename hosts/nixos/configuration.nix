@@ -164,6 +164,7 @@
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [
+      80
       7777
       25565
     ];
@@ -174,6 +175,5 @@
     platformTheme = "qt5ct";
     style = "kvantum";
   };
-
 
 }
