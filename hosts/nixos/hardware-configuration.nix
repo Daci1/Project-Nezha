@@ -61,5 +61,24 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  services.udev.extraRules = builtins.readFile ./solaar-logitech.rules;
+  environment.systemPackages = [ pkgs.headsetcontrol ];
+  services.udev.packages = [ pkgs.headsetcontrol ];
+  systemd.services.headset-light-off = {
+    description = "Continuously turn off headset lights";
+    wantedBy = [ "multi-user.target" ];
+
+    script = ''
+      while true; do
+        ${pkgs.headsetcontrol}/bin/headsetcontrol -l 0
+        sleep 3
+      done
+    '';
+
+    serviceConfig = {
+      Type = "simple";
+      Restart = "always";
+      RestartSec = 1;
+    };
+  };
+
 }
