@@ -30,8 +30,8 @@ require("nvim-tree").setup({
 			"dist",
 			"*.iml",
 			"node_modules",
-			".cache",
-			".DS_Store",
+			"\\.cache",
+			"\\.DS_Store",
 		},
 	},
 	git = {
