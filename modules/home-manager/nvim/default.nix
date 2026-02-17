@@ -83,6 +83,7 @@ in
           bash
         ]
       ))
+      nvim-treesitter-context
     ];
 
     extraConfig = ''
