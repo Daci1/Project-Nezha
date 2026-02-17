@@ -50,6 +50,7 @@ in
       cmp-nvim-lsp
       cmp-cmdline
       cmp-dap
+      trouble-nvim
 
       nvim-dap
       nvim-dap-ui
