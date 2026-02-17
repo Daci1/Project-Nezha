@@ -31,6 +31,7 @@ in
       undotree
       vim-fugitive
       comment-nvim
+      nvim-scrollbar
 
       gitsigns-nvim
 
