@@ -17,6 +17,7 @@
     ../../modules/nixos/file-explorer.nix
     ../../modules/nixos/gaming
     ../../modules/nixos/greetd.nix
+    ../../modules/nixos/llm.nix
     ../../modules/nixos/multimedia.nix
     ../../modules/nixos/obs.nix
     ../../modules/nixos/sensors.nix
@@ -166,6 +167,7 @@
       80
       7777
       25565
+      9001
     ];
   };
 
