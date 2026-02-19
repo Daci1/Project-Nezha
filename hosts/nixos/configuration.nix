@@ -122,7 +122,6 @@
     os-prober
     git
     vulkan-tools
-    solaar
     tree
     bibata-cursors
     pavucontrol

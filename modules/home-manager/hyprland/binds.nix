@@ -64,7 +64,6 @@ in
         "ALT, grave, exec, kitten quick-access-terminal"
         "$mainMod SHIFT, S, exec, sel=\"$(slurp)\" ||  exit; grim -g \"$sel\" - | wl-copy && notify-send \"Screenshot saved to clipboard\"" # screenshot with selection
         "$mainMod, S, exec, grim - | wl-copy && notify-send \"Screenshot saved to clipboard\"" # screenshot of whole screen
-        "$mainMod SHIFT, R, exec, pkill solaar; solaar -w=hide"
         "$mainMod, L, exec, wlogout"
         "$mainMod, F, fullscreen"
 

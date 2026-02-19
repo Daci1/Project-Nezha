@@ -50,7 +50,6 @@
         "hyprlock"
         "waybar"
         "swaync"
-        "solaar --window=hide --restart-on-wake-up"
         "swww-daemon"
         "swayosd-server"
         "flatpak run com.discordapp.Discord --start-minimized"
