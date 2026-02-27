@@ -69,7 +69,7 @@
 
     script = ''
       while true; do
-        ${pkgs.headsetcontrol}/bin/headsetcontrol -l 0
+        ${pkgs.headsetcontrol}/bin/headsetcontrol -l 0 || true
         sleep 3
       done
     '';
