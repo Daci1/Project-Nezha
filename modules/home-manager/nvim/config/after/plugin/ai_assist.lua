@@ -22,23 +22,53 @@ vim.api.nvim_create_autocmd("InsertCharPre", {
 	end,
 })
 
-require("avante_lib").load()
-require("avante").setup({
-	provider = "copilot",
-	mode = "agentic",
+require("snacks").setup({
+	terminal = {
+		enabled = true,
+		auto_insert = false,
+	},
 })
 
--- User command to reset local state of avante
--- useful when apply code doesn't work
-local function avante_reset()
-	local path = vim.fn.expand("~/.local/state/nvim/avante")
-	if vim.fn.isdirectory(path) == 1 then
-		vim.fn.delete(path, "rf") -- "rf" = recursive + force
-		print("Avante directory reset!")
-	else
-		print("Avante directory does not exist.")
-	end
-end
+vim.g.opencode_opts = {
+	port = 4080,
 
--- Create a custom command that calls this function
-vim.api.nvim_create_user_command("AvanteReset", avante_reset, {})
+	provider = {
+		enabled = "snacks",
+		terminal = {},
+	},
+}
+
+vim.keymap.set("n", "<leader>ot", function()
+	require("opencode").toggle()
+end, { desc = "Toggle embedded" })
+
+vim.keymap.set("n", "<leader>oa", function()
+	require("opencode").ask()
+end, { desc = "Ask opencode" })
+
+vim.keymap.set("v", "<leader>oa", function()
+	require("opencode").ask("@this: ")
+end, { desc = "Ask opencode about selection" })
+
+vim.keymap.set({ "n", "x" }, "<C-x>", function()
+	require("opencode").select()
+end, { desc = "Execute opencode action…" })
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+	callback = function()
+		local pids = vim.fn.systemlist("lsof -ti:4080")
+
+		for _, pid in ipairs(pids) do
+			pid = tonumber(pid)
+			if pid then
+				-- try graceful kill
+				vim.loop.kill(pid, vim.loop.constants.SIGTERM)
+
+				-- force kill fallback
+				vim.defer_fn(function()
+					pcall(vim.loop.kill, pid, vim.loop.constants.SIGKILL)
+				end, 500)
+			end
+		end
+	end,
+})
