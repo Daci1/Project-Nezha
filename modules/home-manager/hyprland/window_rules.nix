@@ -175,6 +175,16 @@ in
         }
 
         {
+          name = "Thunar Rename Popup";
+          float = true;
+          center = true;
+          match = {
+            class = "^(thunar)$";
+            title = "^Rename .*$";
+          };
+        }
+
+        {
           name = "Network Manager Rules";
           float = true;
           size = "(monitor_w*0.35) (monitor_h*0.6)";
