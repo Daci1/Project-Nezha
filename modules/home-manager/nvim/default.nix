@@ -39,7 +39,8 @@ in
       nui-nvim
       plenary-nvim
       render-markdown-nvim
-      avante-nvim
+      opencode-nvim
+      snacks-nvim
 
       noice-nvim
       nvim-notify
@@ -114,6 +115,11 @@ in
     # formatters and linters
     nixfmt
     stylua
+
+    # AI
+    opencode
+
+    lsof
   ];
 
   xdg.configFile.nvim = {

@@ -10,10 +10,11 @@
   # manage.
   imports = [
     ../../modules/home-manager/cava.nix
-    ../../modules/home-manager/gaming.nix
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/nvim
     ../../modules/home-manager/zsh/zsh.nix
+    ../../modules/home-manager/gaming.nix
+    ../../modules/home-manager/opencode.nix
     ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/tui.nix
   ];
