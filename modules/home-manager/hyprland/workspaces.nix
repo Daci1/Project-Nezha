@@ -12,7 +12,7 @@
         "5, monitor:DP-3"
 
         # workspace on-created-empty rules
-        "2, on-created-empty:firefox"
+        "2, on-created-empty:zen-twilight"
         "3, on-created-empty:exec flatpak run com.discordapp.Discord"
         "4, on-created-empty:exec env GDK_SCALE=1.25 GDK_DPI_SCALE=1.25 steam"
         "5, on-created-empty:exec kitty sh -c 'lazydocker'"

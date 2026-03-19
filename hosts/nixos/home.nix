@@ -2,6 +2,7 @@
   config,
   pkgs,
   stablePkgs,
+  inputs,
   ...
 }:
 
@@ -9,6 +10,8 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   imports = [
+    inputs.zen-browser.homeModules.twilight-official
+    ../../modules/home-manager/browser.nix
     ../../modules/home-manager/cava.nix
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/nvim

@@ -156,7 +156,7 @@ in
           "format" = " {icon}  ";
           "format-icons" = {
             "1" = "";
-            "2" = "";
+            "2" = "󰗝";
             "3" = "";
             "4" = "";
             "5" = "󰡨";
@@ -243,12 +243,6 @@ in
           "format" = "{percent}%";
           "on-scroll-down" = "brightnessctl -c backlight set 1%-";
           "on-scroll-up" = "brightnessctl -c backlight set +1%";
-        };
-
-        "custom/firefox" = {
-          "format" = " ";
-          "on-click" = "exec firefox";
-          "tooltip" = false;
         };
 
         "custom/terminal" = {

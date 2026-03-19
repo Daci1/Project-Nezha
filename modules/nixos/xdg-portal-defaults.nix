@@ -7,7 +7,7 @@
       "image/gif" = [ "qimgv.desktop" ];
       "image/bmp" = [ "qimgv.desktop" ];
       "image/webp" = [ "qimgv.desktop" ];
-      "application/pdf" = [ "firefox.desktop" ];
+      "application/pdf" = [ "zen-twilight.desktop" ];
     };
   };
 }

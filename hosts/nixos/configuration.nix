@@ -6,6 +6,17 @@
   ...
 }:
 
+let
+  blender443 =
+    import
+      (fetchTarball {
+        url = "https://github.com/NixOS/nixpkgs/archive/1d4c88323ac36805d09657d13a5273aea1b34f0c.tar.gz";
+        sha256 = "1061lm95hbmpqcbbkr493ypkwy3rs4wgxv21wfj4wg005lwn3i3s";
+      })
+      {
+        system = pkgs.system;
+      };
+in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -113,8 +124,6 @@
     };
   };
 
-  programs.firefox.enable = true;
-
   # ALlow unfree
   nixpkgs.config.allowUnfree = true;
 
@@ -133,6 +142,8 @@
     upscayl
     gimp
     qimgv
+    blender443.blender
+    slack
   ];
 
   # List services that you want to enable:

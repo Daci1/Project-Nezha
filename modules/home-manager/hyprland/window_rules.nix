@@ -84,10 +84,10 @@ in
         }
 
         {
-          name = "Firefox Rules";
+          name = "Zen Rules";
           workspace = 2;
           match = {
-            class = "^([Ff]irefox|org.mozilla.firefox|[Ff]irefox-esr)$";
+            class = "^(zen-twilight)$";
           };
         }
 
@@ -211,13 +211,13 @@ in
         }
 
         {
-          name = "Picture in Picture Firefox";
+          name = "Picture in Picture Zen";
           float = true;
           pin = true;
           move = "2206 78";
           size = "500 280";
           match = {
-            class = "^(firefox)$";
+            class = "^(zen-twilight)$";
             title = "^(Picture-in-Picture)$";
           };
         }
