@@ -210,7 +210,7 @@ in
         # to use the weather module replace <your_location> with your city or town
         # note: do not use spaces: new york would be newyork
         "custom/weather" = {
-          "exec" = "${weatherScript}/bin/weather Timisoara";
+          "exec" = "${weatherScript}/bin/weather Codlea";
           "return-type" = "json";
           "interval" = 600;
         };
