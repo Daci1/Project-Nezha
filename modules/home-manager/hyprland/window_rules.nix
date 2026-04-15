@@ -12,7 +12,8 @@ let
     const SOCKET2 = process.env.XDG_RUNTIME_DIR
       + "/hypr/" + process.env.HYPRLAND_INSTANCE_SIGNATURE
       + "/.socket2.sock";
-    const SKIP = new Set(["steam", "Steam"]);
+    const SKIP_CLASS = new Set(["steam", "Steam"]);
+    const SKIP_TITLE = new Set(["Battle.net"]);
 
     function hasSteamAncestor(pid) {
       while (pid > 1) {
@@ -42,8 +43,9 @@ let
         const parts = line.slice("openwindow>>".length).split(",", 4);
         const addr = parts[0];
         const cls = parts[2];
+        const title = parts[3];
 
-        if (cls.startsWith("steam_app_") || SKIP.has(cls)) continue;
+        if (cls.startsWith("steam_app_") || SKIP_CLASS.has(cls) || SKIP_TITLE.has(title)) continue;
 
         setTimeout(() => {
           try {
@@ -239,6 +241,25 @@ in
           render_unfocused = true;
           match = {
             workspace = 1;
+          };
+        }
+
+        {
+          name = "Battle.net";
+          float = false;
+          workspace = 4;
+          match = {
+            title = "^(Battle\\.net)$";
+          };
+        }
+
+        {
+          name = "Battle.net Login";
+          float = true;
+          center = true;
+          workspace = 4;
+          match = {
+            title = "^(Battle\\.net Login)$";
           };
         }
       ];
