@@ -76,6 +76,9 @@ in
 
         # Hyprpicker
         "$mainMod SHIFT, P, exec, hyprpicker | xargs -r wl-copy"
+
+        # Send Insert key
+        "$mainMod, I, sendshortcut, , Insert,"
       ];
 
       bindm = [
