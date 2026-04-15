@@ -144,6 +144,7 @@ in
     qimgv
     blender443.blender
     slack
+    libreoffice-qt
   ];
 
   # List services that you want to enable:
@@ -179,6 +180,10 @@ in
       7777
       25565
       9001
+      12702 # qbittorrent
+    ];
+    allowedUDPPorts = [
+      12702 # qbittorrent
     ];
   };
 
