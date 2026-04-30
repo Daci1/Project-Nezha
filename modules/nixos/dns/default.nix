@@ -2,8 +2,8 @@
 
 {
   services.duckdns = {
-    enable = false;
-    domains = [ "daci-bmc" ];
+    enable = true;
+    domains = [ "daci-jellyfin" ];
     tokenFile = ./token;
   };
 }
