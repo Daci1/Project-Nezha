@@ -23,7 +23,10 @@
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [
+    "kvm-amd"
+    "vkms" # For headless use, so far only for sunshine
+  ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
