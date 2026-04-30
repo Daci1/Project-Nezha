@@ -219,6 +219,7 @@ in
           "format" = " ";
           "tooltip" = false;
           "on-click" = "hyprsysteminfo";
+          "on-click-right" = "rofi -show drun";
         };
 
         "custom/separator" = {
