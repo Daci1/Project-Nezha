@@ -25,7 +25,9 @@ in
     enable = true;
     withNodeJs = true;
     vimAlias = true;
-    plugins = with stablePkgs.vimPlugins; [
+    withRuby = false;
+    withPython3 = false;
+    plugins = with pkgs.vimPlugins; [
       telescope-nvim
       jb-nvim
       undotree
@@ -59,8 +61,6 @@ in
       nvim-dap-view
       nvim-dap-go
       nvim-dap-vscode-js
-
-      nvim-test
 
       auto-save-nvim
       conform-nvim
@@ -120,6 +120,7 @@ in
     opencode
 
     lsof
+    tree-sitter
   ];
 
   xdg.configFile.nvim = {

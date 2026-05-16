@@ -22,7 +22,7 @@
     slurp
     wl-clipboard
 
-    swww
+    awww
     swaynotificationcenter
 
     waybar
@@ -50,7 +50,7 @@
         "hyprlock"
         "waybar"
         "swaync"
-        "swww-daemon"
+        "awww-daemon"
         "swayosd-server"
         "flatpak run com.discordapp.Discord --start-minimized"
         # "obs --startreplaybuffer"

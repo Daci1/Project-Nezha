@@ -14,7 +14,7 @@ let
         sha256 = "1061lm95hbmpqcbbkr493ypkwy3rs4wgxv21wfj4wg005lwn3i3s";
       })
       {
-        system = pkgs.system;
+        system = pkgs.stdenv.hostPlatform.system;
       };
 in
 {
