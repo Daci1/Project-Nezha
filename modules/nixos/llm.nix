@@ -1,4 +1,4 @@
-{ pkgs, stablePkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -7,7 +7,7 @@
     rocmPackages.rocm-core
     btop-rocm
 
-    stablePkgs.ollama-rocm
+    ollama-rocm
     librechat
   ];
 
@@ -45,11 +45,9 @@
 
   services.ollama = {
     enable = false;
-    package = stablePkgs.ollama-rocm;
+    package = pkgs.ollama-rocm;
     models = "/var/lib/ollama/models";
-    loadModels = [
-      "qwen2.5-coder:14b"
-    ];
+    loadModels = [ ];
     syncModels = true;
     host = "[::]";
     openFirewall = true;
