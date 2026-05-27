@@ -18,7 +18,7 @@ in
         "$mainMod, V, togglefloating, "
         "$mainMod, R, exec, rofi -show drun"
         "$mainMod, P, pseudo,"
-        "$mainMod, J, togglesplit,"
+        "$mainMod, J, layoutmsg, togglesplit"
         "$mainMod, C, centerwindow,"
         "$mainMod SHIFT, P, pin,"
 
