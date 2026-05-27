@@ -40,7 +40,13 @@
     waypaper
     hyprpicker
 
+    # For tray
+    kdePackages.plasma-workspace
+
   ];
+
+  # For tray
+  services.xembed-sni-proxy.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -53,6 +59,7 @@
         "awww-daemon"
         "swayosd-server"
         "flatpak run com.discordapp.Discord --start-minimized"
+        "xembedsniproxy" # for Tray
         # "obs --startreplaybuffer"
       ];
 
