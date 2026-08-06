@@ -262,6 +262,23 @@ in
             title = "^(Battle\\.net Login)$";
           };
         }
+
+        {
+          name = "Exiled Exchange 2 Overlay";
+          float = true;
+          border_size = 0;
+          no_shadow = true;
+          no_blur = true;
+          no_dim = true;
+          no_anim = true;
+          rounding = 0;
+          fullscreen = true;
+          size = "100% 100%";
+          workspace = "special:exiled silent";
+          match = {
+            class = "^(exiled-exchange-2)$";
+          };
+        }
       ];
     };
   };

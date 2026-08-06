@@ -77,6 +77,9 @@ in
         # Hyprpicker
         "$mainMod SHIFT, P, exec, hyprpicker | xargs -r wl-copy"
 
+        # Exiled Exchange 2 overlay toggle
+        "$mainMod, grave, exec, hyprctl --batch 'dispatch togglespecialworkspace exiled ; dispatch focuswindow class:exiled-exchange-2'"
+
         # Send Insert key
         "$mainMod, I, sendshortcut, , Insert,"
       ];
