@@ -40,8 +40,20 @@ in
           "pulseaudio"
           "pulseaudio#microphone"
           "group/connections"
-          "custom/power"
+          "group/power"
         ];
+
+        "group/power" = {
+          "orientation" = "inherit";
+          "drawer" = {
+            "transition-duration" = 500;
+            "transition-left-to-right" = false;
+          };
+          "modules" = [
+            "custom/power"
+            "idle_inhibitor"
+          ];
+        };
 
         "group/connections" = {
           "orientation" = "inherit";
@@ -491,6 +503,20 @@ in
       #workspaces button.urgent {
           border-color: #c9545d;
           color: #c9545d;
+      }
+
+      #power {
+          padding: 0;
+          margin: 1px 6px;
+          background-color: rgba(0,0,0,0.8);
+          border-radius: 10px;
+      }
+
+      #power #custom-power,
+      #power #idle_inhibitor {
+          background-color: transparent;
+          margin: 0;
+          border-radius: 0;
       }
 
       #custom-power {
