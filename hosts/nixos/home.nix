@@ -53,7 +53,7 @@
     gtk4.theme = config.gtk.theme;
     theme = {
       name = "Dracula";
-      package = pkgs.dracula-theme;
+      package = stablePkgs.dracula-theme;
     };
     iconTheme = {
       name = "Dracula";
